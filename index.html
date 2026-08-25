@@ -9,7 +9,7 @@
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
-<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="BI-отчёт по лидам ASP AI Экспедитор" srcdoc="&lt;!doctype html&gt;
+<iframe referrerpolicy="no-referrer" title="BI-отчёт по лидам ASP AI Экспедитор" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -979,6 +979,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #asp-igor-bi-v2 .aspv2-period-stat b { display: block; margin-top: 3px; font-size: 18px; }
     #asp-igor-bi-v2 .aspv2-period-note { align-self: center; color: var(--aspv2-green); font-size: 11px; }
     #asp-igor-bi-v2 .aspv2-period-note.is-risk { color: var(--aspv2-red); }
+    #asp-igor-bi-v2 .aspv2-period-note strong { display: block; margin-bottom: 2px; color: inherit; }
     #asp-igor-bi-v2 .aspv2-tabs { display: flex; gap: 0; margin-top: 14px; border-bottom: 1px solid var(--aspv2-line); overflow-x: auto; }
     #asp-igor-bi-v2 .aspv2-tabs button {
       border: 0; border-bottom: 3px solid transparent; padding: 10px 14px; background: transparent;
@@ -990,11 +991,17 @@ html&gt;body{padding:0}&lt;/style&gt;
     #asp-igor-bi-v2 .aspv2-section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin: 17px 0 9px; }
     #asp-igor-bi-v2 .aspv2-section-title h3 { margin: 0; font-size: 16px; }
     #asp-igor-bi-v2 .aspv2-section-title span { color: var(--aspv2-muted); font-size: 11px; text-align: right; }
+    #asp-igor-bi-v2 .aspv2-section-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+    #asp-igor-bi-v2 .aspv2-export, #asp-igor-bi-v2 .aspv2-tool {
+      min-height: 30px; padding: 6px 9px; border: 1px solid var(--aspv2-line); background: var(--aspv2-surface); color: var(--aspv2-text); cursor: pointer; text-decoration: none;
+    }
     #asp-igor-bi-v2 .aspv2-kpis { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 9px; }
     #asp-igor-bi-v2 .aspv2-kpi { min-height: 98px; padding: 11px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
     #asp-igor-bi-v2 .aspv2-kpi-label { min-height: 31px; color: var(--aspv2-muted); font-size: 11px; }
     #asp-igor-bi-v2 .aspv2-kpi-value { margin-top: 5px; font-size: 24px; font-weight: 720; }
     #asp-igor-bi-v2 .aspv2-kpi-note { margin-top: 3px; color: var(--aspv2-muted); font-size: 10px; }
+    #asp-igor-bi-v2 .aspv2-drillable { cursor: pointer; }
+    #asp-igor-bi-v2 .aspv2-drillable:hover, #asp-igor-bi-v2 .aspv2-drillable:focus-visible { border-color: var(--aspv2-orange); outline: 2px solid var(--aspv2-orange-soft); outline-offset: 1px; }
     #asp-igor-bi-v2 .aspv2-ok { color: var(--aspv2-green); }
     #asp-igor-bi-v2 .aspv2-risk { color: var(--aspv2-red); }
     #asp-igor-bi-v2 .aspv2-two { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(270px,.75fr); gap: 10px; margin-top: 10px; }
@@ -1003,9 +1010,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     #asp-igor-bi-v2 .aspv2-panel-head strong { font-size: 13px; }
     #asp-igor-bi-v2 .aspv2-panel-head span { color: var(--aspv2-muted); font-size: 11px; text-align: right; }
     #asp-igor-bi-v2 .aspv2-bars { display: grid; gap: 8px; }
-    #asp-igor-bi-v2 .aspv2-bar { display: grid; grid-template-columns: 145px 1fr 34px; gap: 9px; align-items: center; }
+    #asp-igor-bi-v2 .aspv2-bar { width: 100%; display: grid; grid-template-columns: 145px 1fr 34px; gap: 9px; align-items: center; padding: 3px; border: 1px solid transparent; background: transparent; color: var(--aspv2-text); text-align: left; }
     #asp-igor-bi-v2 .aspv2-bar-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
-    #asp-igor-bi-v2 .aspv2-track { height: 9px; background: var(--aspv2-surface-alt); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-track { display: block; height: 9px; background: var(--aspv2-surface-alt); border: 1px solid var(--aspv2-line); }
     #asp-igor-bi-v2 .aspv2-fill { height: 100%; background: var(--aspv2-orange); }
     #asp-igor-bi-v2 .aspv2-bar-value { text-align: right; font-size: 11px; font-weight: 700; }
     #asp-igor-bi-v2 .aspv2-rules { display: grid; gap: 9px; }
@@ -1014,22 +1021,49 @@ html&gt;body{padding:0}&lt;/style&gt;
     #asp-igor-bi-v2 .aspv2-rule span { color: var(--aspv2-muted); font-size: 11px; }
     #asp-igor-bi-v2 .aspv2-rule b { font-size: 11px; text-align: right; }
     #asp-igor-bi-v2 .aspv2-callout { margin-top: 10px; padding: 10px; background: var(--aspv2-blue-soft); color: var(--aspv2-blue); font-size: 11px; }
-    #asp-igor-bi-v2 .aspv2-flow { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; }
+    #asp-igor-bi-v2 .aspv2-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
     #asp-igor-bi-v2 .aspv2-step { position: relative; min-height: 92px; padding: 10px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
     #asp-igor-bi-v2 .aspv2-step:not(:last-child)::after { content: &quot;→&quot;; position: absolute; right: -8px; top: 34px; z-index: 2; color: var(--aspv2-orange); font-weight: 800; }
     #asp-igor-bi-v2 .aspv2-step small { color: var(--aspv2-muted); }
     #asp-igor-bi-v2 .aspv2-step b { display: block; margin: 8px 0 3px; font-size: 23px; }
     #asp-igor-bi-v2 .aspv2-step span { color: var(--aspv2-muted); font-size: 10px; }
+    #asp-igor-bi-v2 .aspv2-step:nth-child(4)::after, #asp-igor-bi-v2 .aspv2-step:nth-child(8)::after { display: none; }
     #asp-igor-bi-v2 .aspv2-tech { border-style: dashed; background: var(--aspv2-surface-alt); }
     #asp-igor-bi-v2 .aspv2-conversions { display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; margin-top: 10px; }
     #asp-igor-bi-v2 .aspv2-conversion { padding: 11px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
     #asp-igor-bi-v2 .aspv2-conversion b { display: block; font-size: 20px; margin-bottom: 4px; }
     #asp-igor-bi-v2 .aspv2-conversion span { color: var(--aspv2-muted); font-size: 10px; }
+    #asp-igor-bi-v2 .aspv2-km-times { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; margin-top: 10px; }
+    #asp-igor-bi-v2 .aspv2-state-groups { display: grid; gap: 12px; }
+    #asp-igor-bi-v2 .aspv2-state-group { padding: 10px; background: var(--aspv2-surface-alt); border-left: 4px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-state-group[data-group=&quot;new&quot;] { border-left-color: var(--aspv2-blue); }
+    #asp-igor-bi-v2 .aspv2-state-group[data-group=&quot;work&quot;] { border-left-color: var(--aspv2-orange); }
+    #asp-igor-bi-v2 .aspv2-state-group[data-group=&quot;done&quot;] { border-left-color: var(--aspv2-muted); }
+    #asp-igor-bi-v2 .aspv2-state-group[data-group=&quot;km&quot;] { border-left-color: var(--aspv2-green); }
+    #asp-igor-bi-v2 .aspv2-state-group-title { margin-bottom: 7px; font-size: 11px; font-weight: 700; }
+    #asp-igor-bi-v2 .aspv2-state-row { width: 100%; display: grid; grid-template-columns: 170px 1fr 82px; gap: 9px; align-items: center; padding: 6px 0; border: 0; border-top: 1px solid var(--aspv2-line); background: transparent; color: var(--aspv2-text); text-align: left; cursor: pointer; }
+    #asp-igor-bi-v2 .aspv2-state-row:first-of-type { border-top: 0; }
+    #asp-igor-bi-v2 .aspv2-state-value { text-align: right; font-size: 11px; font-weight: 700; }
+    #asp-igor-bi-v2 .aspv2-control-eq { display: grid; gap: 8px; margin-top: 10px; }
+    #asp-igor-bi-v2 .aspv2-control-eq div { display: flex; justify-content: space-between; gap: 12px; padding: 9px; background: var(--aspv2-surface-alt); border: 1px solid var(--aspv2-line); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-control-eq b { white-space: nowrap; }
     #asp-igor-bi-v2 .aspv2-table-wrap { overflow-x: auto; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
     #asp-igor-bi-v2 table { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 11px; }
     #asp-igor-bi-v2 th, #asp-igor-bi-v2 td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--aspv2-line); }
     #asp-igor-bi-v2 th { color: var(--aspv2-muted); font-weight: 650; background: var(--aspv2-surface-alt); }
     #asp-igor-bi-v2 tr:last-child td { border-bottom: 0; }
+    #asp-igor-bi-v2 th button { width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; font: inherit; }
+    #asp-igor-bi-v2 td a { color: var(--aspv2-blue); font-weight: 700; }
+    #asp-igor-bi-v2 [data-hidden=&quot;true&quot;] { display: none; }
+    #asp-igor-bi-v2 .aspv2-detail-tools { display: grid; grid-template-columns: minmax(220px,1fr) auto auto; gap: 8px; margin-bottom: 9px; }
+    #asp-igor-bi-v2 .aspv2-search { width: 100%; min-height: 34px; padding: 7px 9px; color: var(--aspv2-text); background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-columns { position: relative; }
+    #asp-igor-bi-v2 .aspv2-columns summary { list-style: none; cursor: pointer; }
+    #asp-igor-bi-v2 .aspv2-column-menu { position: absolute; right: 0; z-index: 5; width: 260px; max-height: 310px; overflow: auto; padding: 10px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+    #asp-igor-bi-v2 .aspv2-column-menu label { display: block; padding: 4px 0; font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-drill-banner { display: none; justify-content: space-between; gap: 10px; margin-bottom: 9px; padding: 9px 10px; background: var(--aspv2-orange-soft); color: var(--aspv2-text); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-drill-banner[data-open=&quot;true&quot;] { display: flex; }
+    #asp-igor-bi-v2 .aspv2-drill-banner button { border: 0; background: transparent; color: var(--aspv2-orange); cursor: pointer; }
     #asp-igor-bi-v2 .aspv2-footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 13px; color: var(--aspv2-muted); font-size: 10px; }
     @media (max-width: 980px) {
       #asp-igor-bi-v2 .aspv2-filter-grid { grid-template-columns: repeat(3, minmax(130px,1fr)); }
@@ -1042,7 +1076,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       #asp-igor-bi-v2 .aspv2-freeze, #asp-igor-bi-v2 .aspv2-demo { display: none; }
       #asp-igor-bi-v2 .aspv2-filter-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
       #asp-igor-bi-v2 .aspv2-two { grid-template-columns: 1fr; }
-      #asp-igor-bi-v2 .aspv2-conversions { grid-template-columns: repeat(2,1fr); }
+      #asp-igor-bi-v2 .aspv2-conversions, #asp-igor-bi-v2 .aspv2-km-times { grid-template-columns: repeat(2,1fr); }
       #asp-igor-bi-v2 .aspv2-period-check { grid-template-columns: repeat(2,1fr); }
       #asp-igor-bi-v2 .aspv2-period-note { grid-column: 1 / -1; }
       #asp-igor-bi-v2 .aspv2-flow { grid-template-columns: repeat(2,1fr); }
@@ -1051,8 +1085,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     @media (max-width: 430px) {
       #asp-igor-bi-v2 .aspv2-shell { padding: 11px; }
       #asp-igor-bi-v2 .aspv2-filter-head { align-items: flex-start; flex-direction: column; }
-      #asp-igor-bi-v2 .aspv2-filter-grid, #asp-igor-bi-v2 .aspv2-kpis, #asp-igor-bi-v2 .aspv2-flow, #asp-igor-bi-v2 .aspv2-conversions, #asp-igor-bi-v2 .aspv2-period-check { grid-template-columns: 1fr; }
+      #asp-igor-bi-v2 .aspv2-filter-grid, #asp-igor-bi-v2 .aspv2-kpis, #asp-igor-bi-v2 .aspv2-flow, #asp-igor-bi-v2 .aspv2-conversions, #asp-igor-bi-v2 .aspv2-period-check, #asp-igor-bi-v2 .aspv2-km-times, #asp-igor-bi-v2 .aspv2-detail-tools { grid-template-columns: 1fr; }
       #asp-igor-bi-v2 .aspv2-period-note { grid-column: auto; }
+      #asp-igor-bi-v2 .aspv2-state-row { grid-template-columns: 120px 1fr 74px; }
       #asp-igor-bi-v2 .aspv2-bar { grid-template-columns: 110px 1fr 30px; }
       #asp-igor-bi-v2 .aspv2-footer { flex-direction: column; }
     }
@@ -1104,7 +1139,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/nav&gt;
 
     &lt;section class=&quot;aspv2-view&quot; data-view=&quot;activity&quot; data-open=&quot;true&quot;&gt;
-      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фактическая активность квалификатора&lt;/h3&gt;&lt;span&gt;События периода; один лид может иметь несколько действий&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фактическая активность квалификатора&lt;/h3&gt;&lt;div class=&quot;aspv2-section-actions&quot;&gt;&lt;span&gt;Нажмите на показатель для списка лидов&lt;/span&gt;&lt;a class=&quot;aspv2-export&quot; data-export=&quot;activity&quot; download href=&quot;#&quot;&gt;Экспорт XLSX&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-kpis&quot;&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Контактов передано для загрузки&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;provided&quot;&gt;84&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;входной реестр контактов&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов создано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;created&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot; id=&quot;aspv2-created-note&quot;&gt;95% от переданных контактов&lt;/div&gt;&lt;/div&gt;
@@ -1138,26 +1173,34 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/section&gt;
 
     &lt;section class=&quot;aspv2-view&quot; data-view=&quot;state&quot; data-open=&quot;false&quot;&gt;
-      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фиксированное состояние лидов&lt;/h3&gt;&lt;span&gt;Один лид — одно состояние на конец выбранного периода; дневные остатки не суммируются&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фиксированное состояние лидов&lt;/h3&gt;&lt;div class=&quot;aspv2-section-actions&quot;&gt;&lt;span&gt;Один лид — одно состояние на конец периода&lt;/span&gt;&lt;a class=&quot;aspv2-export&quot; data-export=&quot;state&quot; download href=&quot;#&quot;&gt;Экспорт XLSX&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-two&quot;&gt;
-        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Состояние на дату «до», 21:00 МСК&lt;/strong&gt;&lt;span id=&quot;aspv2-state-total&quot;&gt;80 уникальных лидов&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-bars&quot; id=&quot;aspv2-state-bars&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Правило периода&lt;/strong&gt;&lt;span&gt;защита от двойного счёта&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Состояние на дату «до», 21:00 МСК&lt;/strong&gt;&lt;span id=&quot;aspv2-state-total&quot;&gt;80 уникальных лидов&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-state-groups&quot; id=&quot;aspv2-state-groups&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Контрольная сверка&lt;/strong&gt;&lt;span&gt;защита от двойного счёта&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Активность&lt;/span&gt;&lt;b&gt;сумма событий&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Состояние&lt;/span&gt;&lt;b&gt;последний снимок&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Уникальные лиды&lt;/span&gt;&lt;b&gt;COUNT DISTINCT&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Прошлые дни&lt;/span&gt;&lt;b&gt;не пересчитываются&lt;/b&gt;&lt;/div&gt;
-        &lt;/div&gt;&lt;div class=&quot;aspv2-callout&quot;&gt;Если лид три дня оставался на «Втором касании», в итог периода он попадёт один раз.&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&quot;aspv2-control-eq&quot;&gt;&lt;div&gt;&lt;span&gt;Сумма всех состояний&lt;/span&gt;&lt;b id=&quot;aspv2-state-sum&quot;&gt;80&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Уникальных лидов&lt;/span&gt;&lt;b id=&quot;aspv2-state-unique&quot;&gt;80&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Результат сверки&lt;/span&gt;&lt;b class=&quot;aspv2-ok&quot; id=&quot;aspv2-state-check&quot;&gt;Совпадает&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-callout&quot;&gt;Строка стадии открывает соответствующий список лидов.&lt;/div&gt;&lt;/div&gt;
       &lt;/div&gt;
     &lt;/section&gt;
 
     &lt;section class=&quot;aspv2-view&quot; data-view=&quot;km&quot; data-open=&quot;false&quot;&gt;
-      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Эффективность после передачи клиентскому менеджеру&lt;/h3&gt;&lt;span&gt;Автосоздание обращения отделено от фактической работы КМ&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Эффективность после передачи клиентскому менеджеру&lt;/h3&gt;&lt;div class=&quot;aspv2-section-actions&quot;&gt;&lt;span&gt;Автосоздание обращения отделено от работы КМ&lt;/span&gt;&lt;a class=&quot;aspv2-export&quot; data-export=&quot;km&quot; download href=&quot;#&quot;&gt;Экспорт XLSX&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-flow&quot;&gt;
         &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Передано КМ&lt;/small&gt;&lt;b data-metric=&quot;transferred&quot;&gt;4&lt;/b&gt;&lt;span&gt;когорта входящих лидов&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-step aspv2-tech&quot;&gt;&lt;small&gt;Автосоздано обращений&lt;/small&gt;&lt;b data-metric=&quot;autoAppeals&quot;&gt;4&lt;/b&gt;&lt;span&gt;технический показатель · не KPI КМ&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Принято КМ в работу&lt;/small&gt;&lt;b data-metric=&quot;accepted&quot;&gt;3&lt;/b&gt;&lt;span&gt;первый нетехнический переход&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Не принято КМ&lt;/small&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;notAccepted&quot;&gt;1&lt;/b&gt;&lt;span&gt;нет первого действия КМ&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Принято вовремя&lt;/small&gt;&lt;b data-metric=&quot;acceptedOnTime&quot;&gt;2&lt;/b&gt;&lt;span&gt;в пределах SLA&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Принято с нарушением&lt;/small&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;lateAccepted&quot;&gt;1&lt;/b&gt;&lt;span&gt;первое действие позже SLA&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Находится в работе&lt;/small&gt;&lt;b data-metric=&quot;inProgress&quot;&gt;2&lt;/b&gt;&lt;span&gt;открытые обращения КМ&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Создано заказов&lt;/small&gt;&lt;b data-metric=&quot;orders&quot;&gt;2&lt;/b&gt;&lt;span&gt;из переданной когорты&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Создано сделок&lt;/small&gt;&lt;b data-metric=&quot;deals&quot;&gt;1&lt;/b&gt;&lt;span&gt;сквозная связь до сделки&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;aspv2-km-times&quot;&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;avgAccept&quot;&gt;56&lt;/b&gt;&lt;span&gt;Среднее время принятия, минут&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;medianAccept&quot;&gt;42&lt;/b&gt;&lt;span&gt;Медианное время принятия, минут&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;firstKmAction&quot;&gt;68&lt;/b&gt;&lt;span&gt;Среднее время до первого действия КМ, минут&lt;/span&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;aspv2-conversions&quot;&gt;
         &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;acceptanceRate&quot;&gt;75%&lt;/b&gt;&lt;span&gt;Принятие в работу = принятые / переданные КМ&lt;/span&gt;&lt;/div&gt;
@@ -1165,14 +1208,25 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;dealRate&quot;&gt;25%&lt;/b&gt;&lt;span&gt;Переданный лид → сделка&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;failRate&quot;&gt;25%&lt;/b&gt;&lt;span&gt;Провалы после передачи / переданные КМ&lt;/span&gt;&lt;/div&gt;
       &lt;/div&gt;
-      &lt;div class=&quot;aspv2-panel&quot; style=&quot;margin-top:10px&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Результаты в разрезе КМ&lt;/strong&gt;&lt;span&gt;фильтр КМ применяется к этому блоку и связанной когорте&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;КМ&lt;/th&gt;&lt;th&gt;Передано&lt;/th&gt;&lt;th&gt;Автосоздано&lt;/th&gt;&lt;th&gt;Принято&lt;/th&gt;&lt;th&gt;Заказы&lt;/th&gt;&lt;th&gt;Сделки&lt;/th&gt;&lt;th&gt;Провалы&lt;/th&gt;&lt;th&gt;Время принятия&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-km-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-panel&quot; style=&quot;margin-top:10px&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Результаты в разрезе КМ&lt;/strong&gt;&lt;span&gt;фильтр КМ применяется к этому блоку и связанной когорте&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;КМ&lt;/th&gt;&lt;th&gt;Передано&lt;/th&gt;&lt;th&gt;Не принято&lt;/th&gt;&lt;th&gt;Принято вовремя&lt;/th&gt;&lt;th&gt;С нарушением&lt;/th&gt;&lt;th&gt;В работе&lt;/th&gt;&lt;th&gt;Заказы&lt;/th&gt;&lt;th&gt;Сделки&lt;/th&gt;&lt;th&gt;Провалы&lt;/th&gt;&lt;th&gt;Среднее принятия&lt;/th&gt;&lt;th&gt;Медиана принятия&lt;/th&gt;&lt;th&gt;До первого действия&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-km-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;/section&gt;
 
     &lt;section class=&quot;aspv2-view&quot; data-view=&quot;detail&quot; data-open=&quot;false&quot;&gt;
-      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Детализация и контроль данных&lt;/h3&gt;&lt;span&gt;период → день → карточка лида&lt;/span&gt;&lt;/div&gt;
-      &lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Дата&lt;/th&gt;&lt;th&gt;Лид&lt;/th&gt;&lt;th&gt;Квалификатор&lt;/th&gt;&lt;th&gt;КМ&lt;/th&gt;&lt;th&gt;Источник&lt;/th&gt;&lt;th&gt;База&lt;/th&gt;&lt;th&gt;Состояние 21:00&lt;/th&gt;&lt;th&gt;Попытки&lt;/th&gt;&lt;th&gt;Следующее дело&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-detail-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Детализация и контроль данных&lt;/h3&gt;&lt;div class=&quot;aspv2-section-actions&quot;&gt;&lt;span&gt;период → день → карточка лида&lt;/span&gt;&lt;a class=&quot;aspv2-export&quot; data-export=&quot;detail&quot; download href=&quot;#&quot;&gt;Экспорт XLSX&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-drill-banner&quot; id=&quot;aspv2-drill-banner&quot; data-open=&quot;false&quot;&gt;&lt;span id=&quot;aspv2-drill-text&quot;&gt;&lt;/span&gt;&lt;button type=&quot;button&quot; id=&quot;aspv2-drill-reset&quot;&gt;Сбросить раскрытие&lt;/button&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-detail-tools&quot;&gt;
+        &lt;input class=&quot;aspv2-search&quot; id=&quot;aspv2-search&quot; type=&quot;search&quot; placeholder=&quot;Поиск по ID, телефону или компании&quot; aria-label=&quot;Поиск по ID, телефону или компании&quot;&gt;
+        &lt;details class=&quot;aspv2-columns&quot;&gt;&lt;summary class=&quot;aspv2-tool&quot;&gt;Отображаемые столбцы&lt;/summary&gt;&lt;div class=&quot;aspv2-column-menu&quot; id=&quot;aspv2-column-menu&quot;&gt;&lt;/div&gt;&lt;/details&gt;
+        &lt;button type=&quot;button&quot; class=&quot;aspv2-tool&quot; id=&quot;aspv2-clear-sort&quot;&gt;Сбросить сортировку&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table id=&quot;aspv2-detail-table&quot;&gt;&lt;thead&gt;&lt;tr id=&quot;aspv2-detail-head&quot;&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-detail-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-two&quot;&gt;
         &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Качество данных&lt;/strong&gt;&lt;span&gt;влияет на доступность фильтров&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
+          &lt;div class=&quot;aspv2-rule aspv2-drillable&quot; data-quality=&quot;Дубли&quot;&gt;&lt;span&gt;Дубли&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;duplicates&quot;&gt;3&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule aspv2-drillable&quot; data-quality=&quot;Технические и личные контакты&quot;&gt;&lt;span&gt;Технические и личные контакты&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;technicalContacts&quot;&gt;7&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule aspv2-drillable&quot; data-quality=&quot;Без следующего дела&quot;&gt;&lt;span&gt;Лиды без следующего дела&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;noNext&quot;&gt;9&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule aspv2-drillable&quot; data-quality=&quot;Просроченные дела&quot;&gt;&lt;span&gt;Просроченные дела&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;overdue&quot;&gt;6&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule aspv2-drillable&quot; data-quality=&quot;Расхождения итогов&quot;&gt;&lt;span&gt;Расхождения итоговых цифр и детализации&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;qualityDiff&quot;&gt;2&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Источник заполнен&lt;/span&gt;&lt;b&gt;202 / 202&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;База прозвона заполнена&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;0 / 202&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;История первоначального КМ&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;нужен событийный слой&lt;/b&gt;&lt;/div&gt;
@@ -1197,30 +1251,56 @@ html&gt;body{padding:0}&lt;/style&gt;
       const base = {
         provided:84, received:80, created:80, processed:63, attempted:63, calls:399, connected:58, transferred:4,
         noNext:9, overdue:6, queue:17, median:62, average:93, handoff:38,
-        autoAppeals:4, accepted:3, orders:2, deals:1, failures:1
+        autoAppeals:4, accepted:3, notAccepted:1, acceptedOnTime:2, lateAccepted:1, inProgress:2,
+        avgAccept:56, medianAccept:42, firstKmAction:68, orders:2, deals:1, failures:1,
+        duplicates:3, technicalContacts:7, qualityDiff:2
       };
       const statusBase = [
-        [&#x27;Первичный контакт&#x27;,47], [&#x27;Второе касание&#x27;,11], [&#x27;Третье касание&#x27;,0],
-        [&#x27;Просили перезвонить&#x27;,1], [&#x27;Передан КМ&#x27;,4], [&#x27;Нецелевой&#x27;,17],
-        [&#x27;Нет ответа&#x27;,0], [&#x27;Сейчас не актуально&#x27;,0], [&#x27;Сделка&#x27;,0], [&#x27;Провал&#x27;,0]
+        {label:&#x27;Новый лид&#x27;,value:8,group:&#x27;new&#x27;,groupLabel:&#x27;Новый&#x27;},
+        {label:&#x27;Первичный контакт&#x27;,value:31,group:&#x27;work&#x27;,groupLabel:&#x27;В работе&#x27;},
+        {label:&#x27;Второе касание&#x27;,value:10,group:&#x27;work&#x27;,groupLabel:&#x27;В работе&#x27;},
+        {label:&#x27;Третье касание&#x27;,value:2,group:&#x27;work&#x27;,groupLabel:&#x27;В работе&#x27;},
+        {label:&#x27;Просили перезвонить&#x27;,value:5,group:&#x27;work&#x27;,groupLabel:&#x27;В работе&#x27;},
+        {label:&#x27;Нецелевой&#x27;,value:10,group:&#x27;done&#x27;,groupLabel:&#x27;Завершена квалификация&#x27;},
+        {label:&#x27;Нет ответа&#x27;,value:5,group:&#x27;done&#x27;,groupLabel:&#x27;Завершена квалификация&#x27;},
+        {label:&#x27;Сейчас не актуально&#x27;,value:5,group:&#x27;done&#x27;,groupLabel:&#x27;Завершена квалификация&#x27;},
+        {label:&#x27;Передан КМ&#x27;,value:4,group:&#x27;km&#x27;,groupLabel:&#x27;Передано КМ&#x27;}
       ];
       const kmRows = [
-        [&#x27;КМ 1&#x27;,2,2,2,1,1,0,&#x27;54 мин&#x27;],
-        [&#x27;КМ 2&#x27;,1,1,1,1,0,0,&#x27;1 ч 18 мин&#x27;],
-        [&#x27;КМ 3&#x27;,1,1,0,0,0,1,&#x27;—&#x27;]
+        [&#x27;КМ 1&#x27;,2,0,1,1,1,1,1,0,&#x27;48 мин&#x27;,&#x27;37 мин&#x27;,&#x27;61 мин&#x27;],
+        [&#x27;КМ 2&#x27;,1,0,1,0,1,1,0,0,&#x27;64 мин&#x27;,&#x27;51 мин&#x27;,&#x27;75 мин&#x27;],
+        [&#x27;КМ 3&#x27;,1,1,0,0,0,0,0,1,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;]
       ];
       const details = [
-        [&#x27;16.06&#x27;,&#x27;L-0161&#x27;,&#x27;Квалификатор 1&#x27;,&#x27;КМ 1&#x27;,&#x27;Звонок&#x27;,&#x27;Парсинг&#x27;,&#x27;Передан КМ&#x27;,3,&#x27;17.06 10:00&#x27;],
-        [&#x27;16.06&#x27;,&#x27;L-0162&#x27;,&#x27;Квалификатор 1&#x27;,&#x27;КМ 2&#x27;,&#x27;Звонок&#x27;,&#x27;Холодная база&#x27;,&#x27;Второе касание&#x27;,2,&#x27;17.06 12:00&#x27;],
-        [&#x27;16.06&#x27;,&#x27;L-0163&#x27;,&#x27;Квалификатор 2&#x27;,&#x27;КМ 3&#x27;,&#x27;Ручное создание&#x27;,&#x27;Справочник&#x27;,&#x27;Нецелевой&#x27;,1,&#x27;—&#x27;],
-        [&#x27;16.06&#x27;,&#x27;L-0164&#x27;,&#x27;Квалификатор 2&#x27;,&#x27;КМ 1&#x27;,&#x27;Рекомендация&#x27;,&#x27;Конкурент А&#x27;,&#x27;Просили перезвонить&#x27;,2,&#x27;18.06 09:00&#x27;]
+        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0161&#x27;,leadNumeric:&#x27;161&#x27;,company:&#x27;ООО Альфа&#x27;,phone:&#x27;+7 900 000-01-61&#x27;,createdAt:&#x27;16.06 09:05&#x27;,firstAttemptAt:&#x27;16.06 09:42&#x27;,connectedAt:&#x27;16.06 09:58&#x27;,transferredAt:&#x27;16.06 10:10&#x27;,acceptedAt:&#x27;16.06 10:37&#x27;,qualifier:&#x27;Квалификатор 1&#x27;,km:&#x27;КМ 1&#x27;,source:&#x27;Звонок&#x27;,base:&#x27;Парсинг&#x27;,qualification:&#x27;Целевой&#x27;,appealId:&#x27;A-4012&#x27;,orderId:&#x27;Z-1386&#x27;,dealId:&#x27;2957&#x27;,appealState:&#x27;В работе&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Передан КМ&#x27;,attempts:3,next:&#x27;17.06 10:00&#x27;,quality:[]},
+        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0162&#x27;,leadNumeric:&#x27;162&#x27;,company:&#x27;ООО Вектор&#x27;,phone:&#x27;+7 900 000-01-62&#x27;,createdAt:&#x27;16.06 09:17&#x27;,firstAttemptAt:&#x27;16.06 10:03&#x27;,connectedAt:&#x27;—&#x27;,transferredAt:&#x27;—&#x27;,acceptedAt:&#x27;—&#x27;,qualifier:&#x27;Квалификатор 1&#x27;,km:&#x27;КМ 2&#x27;,source:&#x27;Звонок&#x27;,base:&#x27;Холодная база&#x27;,qualification:&#x27;В работе&#x27;,appealId:&#x27;—&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;—&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Второе касание&#x27;,attempts:2,next:&#x27;17.06 12:00&#x27;,quality:[&#x27;Без следующего дела&#x27;]},
+        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0163&#x27;,leadNumeric:&#x27;163&#x27;,company:&#x27;Личный контакт&#x27;,phone:&#x27;+7 900 000-01-63&#x27;,createdAt:&#x27;16.06 10:12&#x27;,firstAttemptAt:&#x27;16.06 10:20&#x27;,connectedAt:&#x27;16.06 10:21&#x27;,transferredAt:&#x27;—&#x27;,acceptedAt:&#x27;—&#x27;,qualifier:&#x27;Квалификатор 2&#x27;,km:&#x27;КМ 3&#x27;,source:&#x27;Ручное создание&#x27;,base:&#x27;Справочник&#x27;,qualification:&#x27;Нецелевой&#x27;,appealId:&#x27;—&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;—&#x27;,failureReason:&#x27;Технический / личный контакт&#x27;,state:&#x27;Нецелевой&#x27;,attempts:1,next:&#x27;—&#x27;,quality:[&#x27;Технические и личные контакты&#x27;,&#x27;Без следующего дела&#x27;]},
+        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0164&#x27;,leadNumeric:&#x27;164&#x27;,company:&#x27;АО Транзит&#x27;,phone:&#x27;+7 900 000-01-64&#x27;,createdAt:&#x27;16.06 11:06&#x27;,firstAttemptAt:&#x27;16.06 13:18&#x27;,connectedAt:&#x27;16.06 13:30&#x27;,transferredAt:&#x27;—&#x27;,acceptedAt:&#x27;—&#x27;,qualifier:&#x27;Квалификатор 2&#x27;,km:&#x27;КМ 1&#x27;,source:&#x27;Рекомендация&#x27;,base:&#x27;Конкурент А&#x27;,qualification:&#x27;Перезвонить&#x27;,appealId:&#x27;—&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;—&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Просили перезвонить&#x27;,attempts:2,next:&#x27;18.06 09:00&#x27;,quality:[&#x27;Просроченные дела&#x27;]},
+        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0165&#x27;,leadNumeric:&#x27;165&#x27;,company:&#x27;ООО Север&#x27;,phone:&#x27;+7 900 000-01-65&#x27;,createdAt:&#x27;16.06 12:25&#x27;,firstAttemptAt:&#x27;—&#x27;,connectedAt:&#x27;—&#x27;,transferredAt:&#x27;—&#x27;,acceptedAt:&#x27;—&#x27;,qualifier:&#x27;Квалификатор 1&#x27;,km:&#x27;КМ 2&#x27;,source:&#x27;Веб-форма&#x27;,base:&#x27;Парсинг&#x27;,qualification:&#x27;Не начата&#x27;,appealId:&#x27;—&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;—&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Новый лид&#x27;,attempts:0,next:&#x27;—&#x27;,quality:[&#x27;Дубли&#x27;,&#x27;Без следующего дела&#x27;,&#x27;Расхождения итогов&#x27;]},
+        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0166&#x27;,leadNumeric:&#x27;166&#x27;,company:&#x27;ИП Горизонт&#x27;,phone:&#x27;+7 900 000-01-66&#x27;,createdAt:&#x27;16.06 13:40&#x27;,firstAttemptAt:&#x27;16.06 14:00&#x27;,connectedAt:&#x27;16.06 14:09&#x27;,transferredAt:&#x27;16.06 14:20&#x27;,acceptedAt:&#x27;16.06 15:44&#x27;,qualifier:&#x27;Квалификатор 1&#x27;,km:&#x27;КМ 2&#x27;,source:&#x27;Звонок&#x27;,base:&#x27;Парсинг&#x27;,qualification:&#x27;Целевой&#x27;,appealId:&#x27;A-4015&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;Принято с нарушением&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Передан КМ&#x27;,attempts:4,next:&#x27;17.06 09:30&#x27;,quality:[&#x27;Просроченные дела&#x27;]}
+      ];
+      const detailColumns = [
+        [&#x27;snapshot&#x27;,&#x27;Дата снимка&#x27;],[&#x27;leadId&#x27;,&#x27;ID лида&#x27;],[&#x27;company&#x27;,&#x27;Компания&#x27;],[&#x27;phone&#x27;,&#x27;Телефон&#x27;],
+        [&#x27;createdAt&#x27;,&#x27;Создан&#x27;],[&#x27;firstAttemptAt&#x27;,&#x27;Первая попытка&#x27;],[&#x27;connectedAt&#x27;,&#x27;Успешный дозвон&#x27;],
+        [&#x27;transferredAt&#x27;,&#x27;Передан КМ&#x27;],[&#x27;acceptedAt&#x27;,&#x27;Принят КМ&#x27;],[&#x27;qualifier&#x27;,&#x27;Квалификатор&#x27;],[&#x27;km&#x27;,&#x27;КМ&#x27;],
+        [&#x27;source&#x27;,&#x27;Источник&#x27;],[&#x27;base&#x27;,&#x27;База&#x27;],[&#x27;qualification&#x27;,&#x27;Результат квалификации&#x27;],
+        [&#x27;appealId&#x27;,&#x27;ID обращения&#x27;],[&#x27;orderId&#x27;,&#x27;ID заказа&#x27;],[&#x27;dealId&#x27;,&#x27;ID сделки&#x27;],[&#x27;appealState&#x27;,&#x27;Состояние обращения&#x27;],
+        [&#x27;failureReason&#x27;,&#x27;Причина провала&#x27;],[&#x27;state&#x27;,&#x27;Состояние лида&#x27;],[&#x27;attempts&#x27;,&#x27;Попытки&#x27;],[&#x27;next&#x27;,&#x27;Следующее дело&#x27;]
       ];
       const els = {
         from: root.querySelector(&#x27;#aspv2-from&#x27;), to: root.querySelector(&#x27;#aspv2-to&#x27;),
         qualifier: root.querySelector(&#x27;#aspv2-qualifier&#x27;), km: root.querySelector(&#x27;#aspv2-km&#x27;),
         source: root.querySelector(&#x27;#aspv2-source&#x27;), base: root.querySelector(&#x27;#aspv2-base&#x27;),
-        chips: root.querySelector(&#x27;#aspv2-chips&#x27;)
+        chips: root.querySelector(&#x27;#aspv2-chips&#x27;), search: root.querySelector(&#x27;#aspv2-search&#x27;)
       };
+      let visibleColumns = new Set(detailColumns.map(c=&gt;c[0]));
+      let sortKey = null;
+      let sortDirection = 1;
+      let activeDrill = null;
+      let activeState = null;
+      let activeQuality = null;
+      let currentStatusRows = [];
+      let currentDetailRows = [];
       const fmt = d =&gt; new Intl.DateTimeFormat(&#x27;ru-RU&#x27;,{day:&#x27;numeric&#x27;,month:&#x27;short&#x27;,year:&#x27;numeric&#x27;}).format(new Date(`${d}T12:00:00`));
       const days = () =&gt; Math.max(1, Math.round((new Date(els.to.value) - new Date(els.from.value))/86400000)+1);
       const factor = () =&gt; {
@@ -1232,23 +1312,160 @@ html&gt;body{padding:0}&lt;/style&gt;
         return f;
       };
       const metricValue = (key, f) =&gt; {
-        if ([&#x27;median&#x27;,&#x27;average&#x27;,&#x27;handoff&#x27;].includes(key)) return Math.round(base[key] * (1 + (f-1)*.04));
+        if ([&#x27;median&#x27;,&#x27;average&#x27;,&#x27;handoff&#x27;,&#x27;avgAccept&#x27;,&#x27;medianAccept&#x27;,&#x27;firstKmAction&#x27;].includes(key)) return Math.round(base[key] * (1 + (f-1)*.04));
         return Math.max(key === &#x27;deals&#x27; || key === &#x27;failures&#x27; ? 0 : 1, Math.round(base[key]*f));
       };
+      const escapeHtml = value =&gt; String(value).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g,char=&gt;({&#x27;&amp;&#x27;:&#x27;&amp;amp;&#x27;,&#x27;&lt;&#x27;:&#x27;&amp;lt;&#x27;,&#x27;&gt;&#x27;:&#x27;&amp;gt;&#x27;,&#x27;&quot;&#x27;:&#x27;&amp;quot;&#x27;,&quot;&#x27;&quot;:&#x27;&amp;#39;&#x27;}[char]));
       function bars(target, rows) {
         const max = Math.max(1,...rows.map(r=&gt;r[1]));
-        target.innerHTML = rows.map(([label,value]) =&gt; `&lt;div class=&quot;aspv2-bar&quot;&gt;&lt;div class=&quot;aspv2-bar-label&quot; title=&quot;${label}&quot;&gt;${label}&lt;/div&gt;&lt;div class=&quot;aspv2-track&quot;&gt;&lt;div class=&quot;aspv2-fill&quot; style=&quot;width:${Math.round(value/max*100)}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-bar-value&quot;&gt;${value}&lt;/div&gt;&lt;/div&gt;`).join(&#x27;&#x27;);
+        target.innerHTML = rows.map(([label,value]) =&gt; `&lt;button type=&quot;button&quot; class=&quot;aspv2-bar aspv2-drillable&quot; data-bar-label=&quot;${escapeHtml(label)}&quot;&gt;&lt;span class=&quot;aspv2-bar-label&quot; title=&quot;${escapeHtml(label)}&quot;&gt;${escapeHtml(label)}&lt;/span&gt;&lt;span class=&quot;aspv2-track&quot;&gt;&lt;span class=&quot;aspv2-fill&quot; style=&quot;display:block;width:${Math.round(value/max*100)}%&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;aspv2-bar-value&quot;&gt;${value}&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;);
+        target.querySelectorAll(&#x27;[data-bar-label]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;openDetail(`День: ${button.dataset.barLabel}`)));
+      }
+      function switchTab(name) {
+        root.querySelectorAll(&#x27;[data-tab]&#x27;).forEach(button=&gt;button.setAttribute(&#x27;aria-pressed&#x27;,String(button.dataset.tab===name)));
+        root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(view=&gt;view.dataset.open=String(view.dataset.view===name));
+      }
+      function scaleStatuses(total) {
+        const rows = statusBase.map(item=&gt;{
+          const raw = item.value/base.created*total;
+          return {...item,value:Math.floor(raw),fraction:raw-Math.floor(raw)};
+        });
+        let remainder = total-rows.reduce((sum,row)=&gt;sum+row.value,0);
+        [...rows].sort((a,b)=&gt;b.fraction-a.fraction).forEach(row=&gt;{ if (remainder&gt;0) { row.value+=1; remainder-=1; } });
+        return rows;
+      }
+      function renderStates(total) {
+        currentStatusRows = scaleStatuses(total);
+        const max = Math.max(1,...currentStatusRows.map(row=&gt;row.value));
+        const pct1 = value =&gt; total ? `${(value/total*100).toFixed(1).replace(&#x27;.&#x27;,&#x27;,&#x27;)}%` : &#x27;—&#x27;;
+        const groups = [&#x27;new&#x27;,&#x27;work&#x27;,&#x27;done&#x27;,&#x27;km&#x27;];
+        root.querySelector(&#x27;#aspv2-state-groups&#x27;).innerHTML = groups.map(group=&gt;{
+          const rows = currentStatusRows.filter(row=&gt;row.group===group);
+          return `&lt;div class=&quot;aspv2-state-group&quot; data-group=&quot;${group}&quot;&gt;&lt;div class=&quot;aspv2-state-group-title&quot;&gt;${escapeHtml(rows[0].groupLabel)}&lt;/div&gt;${rows.map(row=&gt;`&lt;button type=&quot;button&quot; class=&quot;aspv2-state-row&quot; data-state=&quot;${escapeHtml(row.label)}&quot;&gt;&lt;span&gt;${escapeHtml(row.label)}&lt;/span&gt;&lt;span class=&quot;aspv2-track&quot;&gt;&lt;span class=&quot;aspv2-fill&quot; style=&quot;display:block;width:${Math.round(row.value/max*100)}%&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;aspv2-state-value&quot;&gt;${row.value} — ${pct1(row.value)}&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;`;
+        }).join(&#x27;&#x27;);
+        root.querySelectorAll(&#x27;.aspv2-state-row&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;openDetail(`Стадия: ${button.dataset.state}`,{state:button.dataset.state})));
+        const sum = currentStatusRows.reduce((acc,row)=&gt;acc+row.value,0);
+        root.querySelector(&#x27;#aspv2-state-total&#x27;).textContent = `${total} уникальных лидов`;
+        root.querySelector(&#x27;#aspv2-state-sum&#x27;).textContent = sum;
+        root.querySelector(&#x27;#aspv2-state-unique&#x27;).textContent = total;
+        const check = root.querySelector(&#x27;#aspv2-state-check&#x27;);
+        check.textContent = sum===total ? &#x27;Совпадает&#x27; : `Расхождение: ${sum-total}`;
+        check.classList.toggle(&#x27;aspv2-ok&#x27;,sum===total);
+        check.classList.toggle(&#x27;aspv2-risk&#x27;,sum!==total);
+      }
+      function renderColumnMenu() {
+        root.querySelector(&#x27;#aspv2-column-menu&#x27;).innerHTML = detailColumns.map(([key,label])=&gt;`&lt;label&gt;&lt;input type=&quot;checkbox&quot; data-column=&quot;${key}&quot; checked&gt; ${escapeHtml(label)}&lt;/label&gt;`).join(&#x27;&#x27;);
+        root.querySelectorAll(&#x27;[data-column]&#x27;).forEach(input=&gt;input.addEventListener(&#x27;change&#x27;,()=&gt;{
+          if (input.checked) visibleColumns.add(input.dataset.column); else visibleColumns.delete(input.dataset.column);
+          if (!visibleColumns.size) { visibleColumns.add(&#x27;leadId&#x27;); root.querySelector(&#x27;[data-column=&quot;leadId&quot;]&#x27;).checked=true; }
+          renderDetails();
+        }));
+      }
+      function filteredDetails() {
+        const query = els.search.value.trim().toLowerCase();
+        const rows = details.filter(row =&gt;
+          (els.qualifier.value === &#x27;Все квалификаторы&#x27; || row.qualifier === els.qualifier.value) &amp;&amp;
+          (els.km.value === &#x27;Все КМ&#x27; || row.km === els.km.value) &amp;&amp;
+          (els.source.value === &#x27;Все источники&#x27; || row.source === els.source.value) &amp;&amp;
+          (els.base.value === &#x27;Все базы&#x27; || row.base === els.base.value) &amp;&amp;
+          (!activeState || row.state === activeState) &amp;&amp;
+          (!activeQuality || row.quality.includes(activeQuality)) &amp;&amp;
+          (!query || [row.leadId,row.phone,row.company].some(value=&gt;String(value).toLowerCase().includes(query)))
+        );
+        if (sortKey) rows.sort((a,b)=&gt;String(a[sortKey]).localeCompare(String(b[sortKey]),&#x27;ru&#x27;,{numeric:true})*sortDirection);
+        return rows;
+      }
+      function detailCell(row,key) {
+        const value = row[key] ?? &#x27;—&#x27;;
+        if (key===&#x27;leadId&#x27;) return `&lt;a href=&quot;https://asplogistic.bitrix24.ru/crm/lead/details/${encodeURIComponent(row.leadNumeric)}/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;${escapeHtml(value)}&lt;/a&gt;`;
+        return escapeHtml(value);
+      }
+      function renderDetails() {
+        const columns = detailColumns.filter(([key])=&gt;visibleColumns.has(key));
+        root.querySelector(&#x27;#aspv2-detail-head&#x27;).innerHTML = columns.map(([key,label])=&gt;`&lt;th&gt;&lt;button type=&quot;button&quot; data-sort=&quot;${key}&quot;&gt;${escapeHtml(label)}${sortKey===key ? (sortDirection===1?&#x27; ↑&#x27;:&#x27; ↓&#x27;) : &#x27;&#x27;}&lt;/button&gt;&lt;/th&gt;`).join(&#x27;&#x27;);
+        currentDetailRows = filteredDetails();
+        root.querySelector(&#x27;#aspv2-detail-rows&#x27;).innerHTML = currentDetailRows.length ? currentDetailRows.map(row=&gt;`&lt;tr&gt;${columns.map(([key])=&gt;`&lt;td&gt;${detailCell(row,key)}&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;) : `&lt;tr&gt;&lt;td colspan=&quot;${columns.length}&quot;&gt;Нет строк для выбранного сочетания фильтров&lt;/td&gt;&lt;/tr&gt;`;
+        root.querySelectorAll(&#x27;[data-sort]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;{
+          if (sortKey===button.dataset.sort) sortDirection*=-1; else { sortKey=button.dataset.sort; sortDirection=1; }
+          renderDetails();
+        }));
+        if (currentStatusRows.length) refreshExportLinks();
       }
       function renderTables(f) {
         const selectedKm = els.km.value;
         const filteredKm = kmRows.filter(r =&gt; selectedKm === &#x27;Все КМ&#x27; || r[0] === selectedKm);
-        root.querySelector(&#x27;#aspv2-km-rows&#x27;).innerHTML = filteredKm.map(r=&gt;`&lt;tr&gt;${r.map(c=&gt;`&lt;td&gt;${c}&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;);
-        const filteredDetails = details.filter(r =&gt;
-          (els.qualifier.value === &#x27;Все квалификаторы&#x27; || r[2] === els.qualifier.value) &amp;&amp;
-          (els.km.value === &#x27;Все КМ&#x27; || r[3] === els.km.value) &amp;&amp;
-          (els.source.value === &#x27;Все источники&#x27; || r[4] === els.source.value) &amp;&amp;
-          (els.base.value === &#x27;Все базы&#x27; || r[5] === els.base.value));
-        root.querySelector(&#x27;#aspv2-detail-rows&#x27;).innerHTML = (filteredDetails.length ? filteredDetails : [[&#x27;—&#x27;,&#x27;Нет строк для выбранного сочетания&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;]]).map(r=&gt;`&lt;tr&gt;${r.map(c=&gt;`&lt;td&gt;${c}&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;);
+        root.querySelector(&#x27;#aspv2-km-rows&#x27;).innerHTML = filteredKm.map(r=&gt;`&lt;tr class=&quot;aspv2-drillable&quot; data-km-row=&quot;${escapeHtml(r[0])}&quot;&gt;${r.map(c=&gt;`&lt;td&gt;${c}&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;);
+        root.querySelectorAll(&#x27;[data-km-row]&#x27;).forEach(row=&gt;row.addEventListener(&#x27;click&#x27;,()=&gt;openDetail(`Клиентский менеджер: ${row.dataset.kmRow}`)));
+        renderDetails();
+      }
+      function openDetail(label,options={}) {
+        activeDrill=label;
+        activeState=options.state || null;
+        activeQuality=options.quality || null;
+        els.search.value=&#x27;&#x27;;
+        root.querySelector(&#x27;#aspv2-drill-text&#x27;).textContent=`Раскрытие показателя: ${label}`;
+        root.querySelector(&#x27;#aspv2-drill-banner&#x27;).dataset.open=&#x27;true&#x27;;
+        switchTab(&#x27;detail&#x27;);
+        renderDetails();
+      }
+      function resetDrill() {
+        activeDrill=activeState=activeQuality=null;
+        root.querySelector(&#x27;#aspv2-drill-banner&#x27;).dataset.open=&#x27;false&#x27;;
+        renderDetails();
+      }
+      const xmlEscape = value =&gt; String(value ?? &#x27;&#x27;).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g,char=&gt;({&#x27;&amp;&#x27;:&#x27;&amp;amp;&#x27;,&#x27;&lt;&#x27;:&#x27;&amp;lt;&#x27;,&#x27;&gt;&#x27;:&#x27;&amp;gt;&#x27;,&#x27;&quot;&#x27;:&#x27;&amp;quot;&#x27;,&quot;&#x27;&quot;:&#x27;&amp;apos;&#x27;}[char]));
+      const utf8 = value =&gt; new TextEncoder().encode(value);
+      const le16 = value =&gt; new Uint8Array([value&amp;255,(value&gt;&gt;&gt;8)&amp;255]);
+      const le32 = value =&gt; new Uint8Array([value&amp;255,(value&gt;&gt;&gt;8)&amp;255,(value&gt;&gt;&gt;16)&amp;255,(value&gt;&gt;&gt;24)&amp;255]);
+      const joinBytes = parts =&gt; { const size=parts.reduce((sum,part)=&gt;sum+part.length,0); const out=new Uint8Array(size); let offset=0; parts.forEach(part=&gt;{out.set(part,offset);offset+=part.length;}); return out; };
+      const crcTable = (()=&gt;Array.from({length:256},(_,n)=&gt;{ let c=n; for(let k=0;k&lt;8;k+=1)c=(c&amp;1)?0xedb88320^(c&gt;&gt;&gt;1):c&gt;&gt;&gt;1; return c&gt;&gt;&gt;0; }))();
+      const crc32 = bytes =&gt; { let c=0xffffffff; bytes.forEach(byte=&gt;{c=crcTable[(c^byte)&amp;255]^(c&gt;&gt;&gt;8);}); return (c^0xffffffff)&gt;&gt;&gt;0; };
+      function zipStore(files) {
+        const locals=[]; const centrals=[]; let offset=0; const zipDate=((2026-1980)&lt;&lt;9)|(6&lt;&lt;5)|16;
+        files.forEach(file=&gt;{
+          const name=utf8(file.name); const data=utf8(file.content); const crc=crc32(data);
+          const local=joinBytes([le32(0x04034b50),le16(20),le16(0x0800),le16(0),le16(0),le16(zipDate),le32(crc),le32(data.length),le32(data.length),le16(name.length),le16(0),name,data]);
+          const central=joinBytes([le32(0x02014b50),le16(20),le16(20),le16(0x0800),le16(0),le16(0),le16(zipDate),le32(crc),le32(data.length),le32(data.length),le16(name.length),le16(0),le16(0),le16(0),le16(0),le32(0),le32(offset),name]);
+          locals.push(local); centrals.push(central); offset+=local.length;
+        });
+        const centralBlock=joinBytes(centrals);
+        const end=joinBytes([le32(0x06054b50),le16(0),le16(0),le16(files.length),le16(files.length),le32(centralBlock.length),le32(offset),le16(0)]);
+        return joinBytes([...locals,centralBlock,end]);
+      }
+      function xlsxBlob(rows) {
+        const safeRows=rows.length ? rows : [{Результат:&#x27;Нет строк для выбранных фильтров&#x27;}];
+        const headers=Object.keys(safeRows[0]);
+        const matrix=[headers,...safeRows.map(row=&gt;headers.map(header=&gt;row[header]))];
+        const colName=index=&gt;{ let name=&#x27;&#x27;; for(let n=index+1;n;n=Math.floor((n-1)/26))name=String.fromCharCode(65+(n-1)%26)+name; return name; };
+        const sheetRows=matrix.map((row,rowIndex)=&gt;`&lt;row r=&quot;${rowIndex+1}&quot;&gt;${row.map((value,colIndex)=&gt;{ const ref=`${colName(colIndex)}${rowIndex+1}`; return typeof value===&#x27;number&#x27; ? `&lt;c r=&quot;${ref}&quot;&gt;&lt;v&gt;${value}&lt;/v&gt;&lt;/c&gt;` : `&lt;c r=&quot;${ref}&quot; t=&quot;inlineStr&quot;&gt;&lt;is&gt;&lt;t&gt;${xmlEscape(value)}&lt;/t&gt;&lt;/is&gt;&lt;/c&gt;`; }).join(&#x27;&#x27;)}&lt;/row&gt;`).join(&#x27;&#x27;);
+        const files=[
+          {name:&#x27;[Content_Types].xml&#x27;,content:&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;Types xmlns=&quot;http://schemas.openxmlformats.org/package/2006/content-types&quot;&gt;&lt;Default Extension=&quot;rels&quot; ContentType=&quot;application/vnd.openxmlformats-package.relationships+xml&quot;/&gt;&lt;Default Extension=&quot;xml&quot; ContentType=&quot;application/xml&quot;/&gt;&lt;Override PartName=&quot;/xl/workbook.xml&quot; ContentType=&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml&quot;/&gt;&lt;Override PartName=&quot;/xl/worksheets/sheet1.xml&quot; ContentType=&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml&quot;/&gt;&lt;Override PartName=&quot;/xl/styles.xml&quot; ContentType=&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml&quot;/&gt;&lt;/Types&gt;&#x27;},
+          {name:&#x27;_rels/.rels&#x27;,content:&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;Relationships xmlns=&quot;http://schemas.openxmlformats.org/package/2006/relationships&quot;&gt;&lt;Relationship Id=&quot;rId1&quot; Type=&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument&quot; Target=&quot;xl/workbook.xml&quot;/&gt;&lt;/Relationships&gt;&#x27;},
+          {name:&#x27;xl/workbook.xml&#x27;,content:&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;workbook xmlns=&quot;http://schemas.openxmlformats.org/spreadsheetml/2006/main&quot; xmlns:r=&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships&quot;&gt;&lt;sheets&gt;&lt;sheet name=&quot;Отчёт&quot; sheetId=&quot;1&quot; r:id=&quot;rId1&quot;/&gt;&lt;/sheets&gt;&lt;/workbook&gt;&#x27;},
+          {name:&#x27;xl/_rels/workbook.xml.rels&#x27;,content:&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;Relationships xmlns=&quot;http://schemas.openxmlformats.org/package/2006/relationships&quot;&gt;&lt;Relationship Id=&quot;rId1&quot; Type=&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet&quot; Target=&quot;worksheets/sheet1.xml&quot;/&gt;&lt;Relationship Id=&quot;rId2&quot; Type=&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles&quot; Target=&quot;styles.xml&quot;/&gt;&lt;/Relationships&gt;&#x27;},
+          {name:&#x27;xl/styles.xml&#x27;,content:&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;styleSheet xmlns=&quot;http://schemas.openxmlformats.org/spreadsheetml/2006/main&quot;&gt;&lt;fonts count=&quot;1&quot;&gt;&lt;font&gt;&lt;sz val=&quot;11&quot;/&gt;&lt;name val=&quot;Calibri&quot;/&gt;&lt;/font&gt;&lt;/fonts&gt;&lt;fills count=&quot;1&quot;&gt;&lt;fill&gt;&lt;patternFill patternType=&quot;none&quot;/&gt;&lt;/fill&gt;&lt;/fills&gt;&lt;borders count=&quot;1&quot;&gt;&lt;border/&gt;&lt;/borders&gt;&lt;cellStyleXfs count=&quot;1&quot;&gt;&lt;xf/&gt;&lt;/cellStyleXfs&gt;&lt;cellXfs count=&quot;1&quot;&gt;&lt;xf xfId=&quot;0&quot;/&gt;&lt;/cellXfs&gt;&lt;/styleSheet&gt;&#x27;},
+          {name:&#x27;xl/worksheets/sheet1.xml&#x27;,content:`&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;worksheet xmlns=&quot;http://schemas.openxmlformats.org/spreadsheetml/2006/main&quot;&gt;&lt;sheetData&gt;${sheetRows}&lt;/sheetData&gt;&lt;/worksheet&gt;`}
+        ];
+        return new Blob([zipStore(files)],{type:&#x27;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&#x27;});
+      }
+      const exportUrls = new Map();
+      function exportRows(kind) {
+        let rows=[];
+        if (kind===&#x27;activity&#x27;) rows=[...root.querySelectorAll(&#x27;[data-view=&quot;activity&quot;] .aspv2-kpi&#x27;)].map(card=&gt;({Показатель:card.querySelector(&#x27;.aspv2-kpi-label&#x27;).textContent,Значение:card.querySelector(&#x27;.aspv2-kpi-value&#x27;).textContent}));
+        if (kind===&#x27;state&#x27;) rows=currentStatusRows.map(row=&gt;({Группа:row.groupLabel,Состояние:row.label,Количество:row.value,Доля:`${(row.value/currentStatusRows.reduce((s,r)=&gt;s+r.value,0)*100).toFixed(1)}%`}));
+        if (kind===&#x27;km&#x27;) rows=kmRows.map(row=&gt;Object.fromEntries([&#x27;КМ&#x27;,&#x27;Передано&#x27;,&#x27;Не принято&#x27;,&#x27;Принято вовремя&#x27;,&#x27;С нарушением&#x27;,&#x27;В работе&#x27;,&#x27;Заказы&#x27;,&#x27;Сделки&#x27;,&#x27;Провалы&#x27;,&#x27;Среднее принятия&#x27;,&#x27;Медиана принятия&#x27;,&#x27;До первого действия&#x27;].map((label,i)=&gt;[label,row[i]])));
+        if (kind===&#x27;detail&#x27;) rows=currentDetailRows.map(row=&gt;Object.fromEntries(detailColumns.filter(([key])=&gt;visibleColumns.has(key)).map(([key,label])=&gt;[label,row[key]])));
+        return rows;
+      }
+      function refreshExportLinks() {
+        root.querySelectorAll(&#x27;[data-export]&#x27;).forEach(link=&gt;{
+          const kind=link.dataset.export;
+          if (exportUrls.has(kind)) URL.revokeObjectURL(exportUrls.get(kind));
+          const url=URL.createObjectURL(xlsxBlob(exportRows(kind)));
+          exportUrls.set(kind,url);
+          link.href=url;
+          link.download=`ASP_лиды_${kind}_${els.to.value}.xlsx`;
+        });
       }
       function applyFilters() {
         if (els.from.value &gt; els.to.value) els.to.value = els.from.value;
@@ -1264,10 +1481,14 @@ html&gt;body{padding:0}&lt;/style&gt;
         const attempted = Math.min(created,metricValue(&#x27;attempted&#x27;,f));
         const connected = Math.min(attempted,metricValue(&#x27;connected&#x27;,f));
         const transferred = Math.min(created,metricValue(&#x27;transferred&#x27;,f));
-        const accepted = metricValue(&#x27;accepted&#x27;,f);
-        const orders = metricValue(&#x27;orders&#x27;,f);
-        const deals = metricValue(&#x27;deals&#x27;,f);
-        const failures = metricValue(&#x27;failures&#x27;,f);
+        const accepted = Math.min(transferred,metricValue(&#x27;accepted&#x27;,f));
+        const lateAccepted = Math.min(accepted,metricValue(&#x27;lateAccepted&#x27;,f));
+        const acceptedOnTime = Math.max(0,accepted-lateAccepted);
+        const notAccepted = Math.max(0,transferred-accepted);
+        const inProgress = Math.min(accepted,metricValue(&#x27;inProgress&#x27;,f));
+        const orders = Math.min(transferred,metricValue(&#x27;orders&#x27;,f));
+        const deals = Math.min(orders,metricValue(&#x27;deals&#x27;,f));
+        const failures = Math.min(transferred,metricValue(&#x27;failures&#x27;,f));
         const pct = (v,d) =&gt; d ? `${Math.round(v/d*100)}%` : &#x27;—&#x27;;
         const setMetric = (key,value) =&gt; root.querySelectorAll(`[data-metric=&quot;${key}&quot;]`).forEach(node=&gt;node.textContent=value);
         setMetric(&#x27;provided&#x27;,provided);
@@ -1276,6 +1497,15 @@ html&gt;body{padding:0}&lt;/style&gt;
         setMetric(&#x27;attempted&#x27;,attempted);
         setMetric(&#x27;connected&#x27;,connected);
         setMetric(&#x27;transferred&#x27;,transferred);
+        setMetric(&#x27;autoAppeals&#x27;,transferred);
+        setMetric(&#x27;accepted&#x27;,accepted);
+        setMetric(&#x27;notAccepted&#x27;,notAccepted);
+        setMetric(&#x27;acceptedOnTime&#x27;,acceptedOnTime);
+        setMetric(&#x27;lateAccepted&#x27;,lateAccepted);
+        setMetric(&#x27;inProgress&#x27;,inProgress);
+        setMetric(&#x27;orders&#x27;,orders);
+        setMetric(&#x27;deals&#x27;,deals);
+        setMetric(&#x27;failures&#x27;,failures);
         setMetric(&#x27;processingCoverage&#x27;,pct(processed,created));
         setMetric(&#x27;callCoverage&#x27;,pct(attempted,created));
         setMetric(&#x27;reachRate&#x27;,pct(connected,created));
@@ -1288,10 +1518,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         root.querySelector(&#x27;[data-metric=&quot;orderRate&quot;]&#x27;).textContent = pct(orders,transferred);
         root.querySelector(&#x27;[data-metric=&quot;dealRate&quot;]&#x27;).textContent = pct(deals,transferred);
         root.querySelector(&#x27;[data-metric=&quot;failRate&quot;]&#x27;).textContent = pct(failures,transferred);
-        const statusRows = statusBase.map(([label,value])=&gt;[label,Math.max(value ? 1 : 0,Math.round(value*f))]);
-        bars(root.querySelector(&#x27;#aspv2-state-bars&#x27;), statusRows);
-        const total = statusRows.reduce((s,r)=&gt;s+r[1],0);
-        root.querySelector(&#x27;#aspv2-state-total&#x27;).textContent = `${total} уникальных лидов`;
+        renderStates(created);
         const dayCount = Math.min(7,days());
         const activityRows = Array.from({length:dayCount},(_,i)=&gt;{
           const d = new Date(els.to.value); d.setDate(d.getDate()-(dayCount-1-i));
@@ -1312,7 +1539,9 @@ html&gt;body{padding:0}&lt;/style&gt;
         root.querySelector(&#x27;#aspv2-closed-snapshots&#x27;).textContent = `${closedSnapshots} из ${selectedDays}`;
         const snapshotNote = root.querySelector(&#x27;#aspv2-snapshot-note&#x27;);
         const complete = closedSnapshots === selectedDays;
-        snapshotNote.textContent = complete ? &#x27;Данные периода закрыты полностью.&#x27; : `Не закрыто дневных снимков: ${selectedDays-closedSnapshots}.`;
+        snapshotNote.innerHTML = complete
+          ? &#x27;&lt;strong&gt;Данные периода закрыты полностью.&lt;/strong&gt;Последний закрытый снимок: 16 июня 2026, 21:00 МСК.&#x27;
+          : `&lt;strong&gt;Внимание: дата окончания периода позже последнего закрытого снимка.&lt;/strong&gt;Последний снимок: 16 июня 2026, 21:00 МСК · не закрыто дней: ${selectedDays-closedSnapshots}.`;
         snapshotNote.classList.toggle(&#x27;is-risk&#x27;,!complete);
         root.querySelector(&#x27;#aspv2-freeze-period&#x27;).textContent = els.from.value === els.to.value ? fmt(els.to.value) : `${fmt(els.from.value)} — ${fmt(els.to.value)}`;
         renderTables(f);
@@ -1331,10 +1560,20 @@ html&gt;body{padding:0}&lt;/style&gt;
         } else { els.from.focus(); }
       }));
       root.querySelector(&#x27;#aspv2-apply&#x27;).addEventListener(&#x27;click&#x27;,applyFilters);
-      root.querySelectorAll(&#x27;[data-tab]&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;,()=&gt;{
-        root.querySelectorAll(&#x27;[data-tab]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-pressed&#x27;,String(b===button)));
-        root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(v=&gt;v.dataset.open=String(v.dataset.view===button.dataset.tab));
-      }));
+      root.querySelectorAll(&#x27;[data-tab]&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;,()=&gt;switchTab(button.dataset.tab)));
+      els.search.addEventListener(&#x27;input&#x27;,renderDetails);
+      root.querySelector(&#x27;#aspv2-clear-sort&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{ sortKey=null; sortDirection=1; renderDetails(); });
+      root.querySelector(&#x27;#aspv2-drill-reset&#x27;).addEventListener(&#x27;click&#x27;,resetDrill);
+      root.querySelectorAll(&#x27;.aspv2-kpi,.aspv2-conversion,.aspv2-step,.aspv2-rule[data-quality]&#x27;).forEach(node=&gt;{
+        node.classList.add(&#x27;aspv2-drillable&#x27;);
+        node.setAttribute(&#x27;role&#x27;,&#x27;button&#x27;);
+        node.setAttribute(&#x27;tabindex&#x27;,&#x27;0&#x27;);
+        const label=(node.querySelector(&#x27;.aspv2-kpi-label,small,span&#x27;)?.textContent || &#x27;Показатель&#x27;).trim();
+        const activate=()=&gt;node.dataset.quality ? openDetail(label,{quality:node.dataset.quality}) : openDetail(label);
+        node.addEventListener(&#x27;click&#x27;,activate);
+        node.addEventListener(&#x27;keydown&#x27;,event=&gt;{ if (event.key===&#x27;Enter&#x27; || event.key===&#x27; &#x27;) { event.preventDefault(); activate(); } });
+      });
+      renderColumnMenu();
       applyFilters();
     })();
   &lt;/script&gt;

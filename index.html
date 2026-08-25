@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>BI-отчёт по лидам — ASP AI Экспедитор</title>
+<title>BI-отчёт «Факт» по лидам — ASP AI Экспедитор</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
-<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="BI-отчёт по лидам" srcdoc="&lt;!doctype html&gt;
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="BI-отчёт «Факт» по лидам" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;BI-отчёт по лидам&lt;/title&gt;
+&lt;title&gt;Igor Full Bi Dashboard&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -905,175 +905,384 @@ svg.lucide {
 html&gt;body{padding:0}&lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;div id=&quot;asp-fact-day&quot;&gt;
+&lt;div id=&quot;asp-igor-bi-v2&quot;&gt;
   &lt;style&gt;
-    #asp-fact-day {
-      --asp-page: light-dark(#f3f4f3, #171818);
-      --asp-panel: light-dark(#ffffff, #242525);
-      --asp-text: light-dark(#202321, #f3f4f3);
-      --asp-muted: light-dark(#69706c, #aeb4b0);
-      --asp-line: light-dark(#d9ddda, #3d413e);
-      --asp-orange: light-dark(#eb5a2a, #ff7a4d);
-      --asp-orange-soft: light-dark(#fff0e9, #41261d);
-      --asp-blue: light-dark(#53758d, #7aa4bf);
-      --asp-green: light-dark(#4d7b60, #72ad89);
-      --asp-warn: light-dark(#a36c20, #e3ab59);
-      color: var(--asp-text);
-      background: var(--asp-page);
-      border: 1px solid var(--asp-line);
+    #asp-igor-bi-v2 {
+      --aspv2-bg: light-dark(#f3f5f4, #171918);
+      --aspv2-surface: light-dark(#ffffff, #232624);
+      --aspv2-surface-alt: light-dark(#f7f8f7, #2b2e2c);
+      --aspv2-text: light-dark(#202421, #f3f5f4);
+      --aspv2-muted: light-dark(#66706a, #aeb7b1);
+      --aspv2-line: light-dark(#d8ddda, #3e4540);
+      --aspv2-orange: light-dark(#e85a2a, #ff7b4d);
+      --aspv2-orange-soft: light-dark(#fff0e9, #41281f);
+      --aspv2-blue: light-dark(#496f87, #82acc5);
+      --aspv2-blue-soft: light-dark(#eaf2f7, #243640);
+      --aspv2-green: light-dark(#3e7b58, #73b58c);
+      --aspv2-red: light-dark(#b64d45, #ee8179);
+      --aspv2-amber: light-dark(#a36d21, #e3ad61);
+      color: var(--aspv2-text);
+      background: var(--aspv2-bg);
+      border: 1px solid var(--aspv2-line);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
       overflow: hidden;
+      min-width: 0;
     }
-    #asp-fact-day * { box-sizing: border-box; }
-    #asp-fact-day .asp-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 15px 18px;
-      background: var(--asp-panel);
-      border-bottom: 1px solid var(--asp-line);
+    #asp-igor-bi-v2 * { box-sizing: border-box; }
+    #asp-igor-bi-v2 button,
+    #asp-igor-bi-v2 input,
+    #asp-igor-bi-v2 select { font: inherit; }
+    #asp-igor-bi-v2 .aspv2-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 15px 18px; background: var(--aspv2-surface); border-bottom: 1px solid var(--aspv2-line);
     }
-    #asp-fact-day .asp-brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
-    #asp-fact-day .asp-mark {
-      width: 30px; height: 30px; display: grid; place-items: center;
-      background: var(--asp-orange); color: var(--asp-panel); font-weight: 500;
+    #asp-igor-bi-v2 .aspv2-brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    #asp-igor-bi-v2 .aspv2-mark {
+      width: 32px; height: 32px; display: grid; place-items: center;
+      color: #fff; background: var(--aspv2-orange); font-weight: 750;
     }
-    #asp-fact-day .asp-brand-copy { min-width: 0; }
-    #asp-fact-day .asp-brand-name { font-weight: 500; }
-    #asp-fact-day .asp-breadcrumb { color: var(--asp-muted); font-size: 12px; margin-top: 2px; }
-    #asp-fact-day .asp-date { text-align: right; }
-    #asp-fact-day .asp-date strong { display: block; font-weight: 500; }
-    #asp-fact-day .asp-date span { color: var(--asp-muted); font-size: 12px; }
-    #asp-fact-day .asp-content { padding: 18px; }
-    #asp-fact-day .asp-title-row { display: flex; justify-content: space-between; gap: 14px; align-items: end; }
-    #asp-fact-day h2 { margin: 0; font-size: 22px; font-weight: 500; }
-    #asp-fact-day .asp-subtitle { color: var(--asp-muted); margin-top: 4px; font-size: 13px; }
-    #asp-fact-day .asp-switch { display: inline-flex; border: 1px solid var(--asp-line); background: var(--asp-panel); }
-    #asp-fact-day .asp-switch button {
-      appearance: none; border: 0; padding: 8px 11px; background: transparent; color: var(--asp-muted);
-      cursor: pointer; font: inherit; font-size: 12px;
+    #asp-igor-bi-v2 .aspv2-product { font-weight: 700; }
+    #asp-igor-bi-v2 .aspv2-path { margin-top: 2px; color: var(--aspv2-muted); font-size: 12px; }
+    #asp-igor-bi-v2 .aspv2-freeze { text-align: right; font-size: 12px; color: var(--aspv2-muted); }
+    #asp-igor-bi-v2 .aspv2-freeze strong { display: block; color: var(--aspv2-text); font-size: 13px; }
+    #asp-igor-bi-v2 .aspv2-shell { padding: 18px; }
+    #asp-igor-bi-v2 .aspv2-titlebar { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+    #asp-igor-bi-v2 h2 { margin: 0; font-size: 24px; font-weight: 700; }
+    #asp-igor-bi-v2 .aspv2-sub { margin-top: 4px; color: var(--aspv2-muted); font-size: 13px; }
+    #asp-igor-bi-v2 .aspv2-demo { padding: 7px 10px; background: var(--aspv2-orange-soft); color: var(--aspv2-amber); font-size: 12px; white-space: nowrap; }
+    #asp-igor-bi-v2 .aspv2-filters {
+      margin-top: 14px; padding: 13px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line);
     }
-    #asp-fact-day .asp-switch button[aria-pressed=&quot;true&quot;] { background: var(--asp-orange); color: var(--asp-panel); }
-    #asp-fact-day .asp-kpis { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; margin-top: 16px; }
-    #asp-fact-day .asp-kpi { background: var(--asp-panel); border: 1px solid var(--asp-line); padding: 12px; min-height: 92px; }
-    #asp-fact-day .asp-kpi-label { color: var(--asp-muted); font-size: 12px; min-height: 32px; }
-    #asp-fact-day .asp-kpi-value { font-size: 25px; font-weight: 500; margin-top: 4px; }
-    #asp-fact-day .asp-kpi-note { color: var(--asp-muted); font-size: 11px; margin-top: 3px; }
-    #asp-fact-day .asp-grid { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(230px,.75fr); gap: 12px; margin-top: 12px; }
-    #asp-fact-day .asp-section { background: var(--asp-panel); border: 1px solid var(--asp-line); padding: 14px; }
-    #asp-fact-day .asp-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
-    #asp-fact-day h3 { margin: 0; font-size: 15px; font-weight: 500; }
-    #asp-fact-day .asp-total { color: var(--asp-muted); font-size: 12px; }
-    #asp-fact-day .asp-bars { display: grid; gap: 11px; }
-    #asp-fact-day .asp-bar-row { display: grid; grid-template-columns: 170px 1fr 34px; gap: 10px; align-items: center; }
-    #asp-fact-day .asp-bar-label { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    #asp-fact-day .asp-track { height: 10px; background: var(--asp-page); border: 1px solid var(--asp-line); }
-    #asp-fact-day .asp-fill { height: 100%; background: var(--asp-orange); }
-    #asp-fact-day .asp-bar-value { text-align: right; font-size: 12px; font-weight: 500; }
-    #asp-fact-day .asp-quality { display: grid; gap: 12px; }
-    #asp-fact-day .asp-quality-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; border-bottom: 1px solid var(--asp-line); padding-bottom: 10px; }
-    #asp-fact-day .asp-quality-row:last-child { border: 0; padding-bottom: 0; }
-    #asp-fact-day .asp-quality-label { color: var(--asp-muted); font-size: 12px; }
-    #asp-fact-day .asp-quality-value { font-size: 13px; font-weight: 500; }
-    #asp-fact-day .asp-warning { margin-top: 12px; padding: 10px 12px; background: var(--asp-orange-soft); color: var(--asp-warn); font-size: 12px; }
-    #asp-fact-day .asp-foot { display: flex; justify-content: space-between; gap: 12px; padding-top: 13px; color: var(--asp-muted); font-size: 11px; }
-    @media (max-width: 760px) {
-      #asp-fact-day .asp-kpis { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      #asp-fact-day .asp-grid { grid-template-columns: 1fr; }
-      #asp-fact-day .asp-title-row { align-items: stretch; flex-direction: column; }
-      #asp-fact-day .asp-switch { align-self: flex-start; }
+    #asp-igor-bi-v2 .aspv2-filter-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 11px; }
+    #asp-igor-bi-v2 .aspv2-filter-head strong { font-size: 14px; }
+    #asp-igor-bi-v2 .aspv2-presets { display: flex; gap: 6px; flex-wrap: wrap; }
+    #asp-igor-bi-v2 .aspv2-presets button {
+      border: 1px solid var(--aspv2-line); background: var(--aspv2-surface-alt); color: var(--aspv2-muted);
+      padding: 6px 9px; cursor: pointer;
+    }
+    #asp-igor-bi-v2 .aspv2-presets button[aria-pressed=&quot;true&quot;] { border-color: var(--aspv2-orange); color: var(--aspv2-text); background: var(--aspv2-orange-soft); }
+    #asp-igor-bi-v2 .aspv2-filter-grid { display: grid; grid-template-columns: repeat(6, minmax(120px,1fr)) auto; gap: 9px; align-items: end; }
+    #asp-igor-bi-v2 .aspv2-field label { display: block; margin-bottom: 5px; color: var(--aspv2-muted); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-field input,
+    #asp-igor-bi-v2 .aspv2-field select {
+      width: 100%; min-height: 34px; padding: 7px 8px; color: var(--aspv2-text);
+      background: var(--aspv2-surface-alt); border: 1px solid var(--aspv2-line); border-radius: 0;
+    }
+    #asp-igor-bi-v2 .aspv2-apply {
+      min-height: 34px; border: 0; padding: 8px 13px; color: #fff; background: var(--aspv2-orange); cursor: pointer;
+    }
+    #asp-igor-bi-v2 .aspv2-chips { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 10px; color: var(--aspv2-muted); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-chip { padding: 5px 7px; background: var(--aspv2-surface-alt); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-tabs { display: flex; gap: 0; margin-top: 14px; border-bottom: 1px solid var(--aspv2-line); overflow-x: auto; }
+    #asp-igor-bi-v2 .aspv2-tabs button {
+      border: 0; border-bottom: 3px solid transparent; padding: 10px 14px; background: transparent;
+      color: var(--aspv2-muted); cursor: pointer; white-space: nowrap;
+    }
+    #asp-igor-bi-v2 .aspv2-tabs button[aria-pressed=&quot;true&quot;] { color: var(--aspv2-text); border-bottom-color: var(--aspv2-orange); }
+    #asp-igor-bi-v2 .aspv2-view { display: none; }
+    #asp-igor-bi-v2 .aspv2-view[data-open=&quot;true&quot;] { display: block; }
+    #asp-igor-bi-v2 .aspv2-section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin: 17px 0 9px; }
+    #asp-igor-bi-v2 .aspv2-section-title h3 { margin: 0; font-size: 16px; }
+    #asp-igor-bi-v2 .aspv2-section-title span { color: var(--aspv2-muted); font-size: 11px; text-align: right; }
+    #asp-igor-bi-v2 .aspv2-kpis { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 9px; }
+    #asp-igor-bi-v2 .aspv2-kpi { min-height: 98px; padding: 11px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-kpi-label { min-height: 31px; color: var(--aspv2-muted); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-kpi-value { margin-top: 5px; font-size: 24px; font-weight: 720; }
+    #asp-igor-bi-v2 .aspv2-kpi-note { margin-top: 3px; color: var(--aspv2-muted); font-size: 10px; }
+    #asp-igor-bi-v2 .aspv2-ok { color: var(--aspv2-green); }
+    #asp-igor-bi-v2 .aspv2-risk { color: var(--aspv2-red); }
+    #asp-igor-bi-v2 .aspv2-two { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(270px,.75fr); gap: 10px; margin-top: 10px; }
+    #asp-igor-bi-v2 .aspv2-panel { padding: 13px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); min-width: 0; }
+    #asp-igor-bi-v2 .aspv2-panel-head { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    #asp-igor-bi-v2 .aspv2-panel-head strong { font-size: 13px; }
+    #asp-igor-bi-v2 .aspv2-panel-head span { color: var(--aspv2-muted); font-size: 11px; text-align: right; }
+    #asp-igor-bi-v2 .aspv2-bars { display: grid; gap: 8px; }
+    #asp-igor-bi-v2 .aspv2-bar { display: grid; grid-template-columns: 145px 1fr 34px; gap: 9px; align-items: center; }
+    #asp-igor-bi-v2 .aspv2-bar-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-track { height: 9px; background: var(--aspv2-surface-alt); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-fill { height: 100%; background: var(--aspv2-orange); }
+    #asp-igor-bi-v2 .aspv2-bar-value { text-align: right; font-size: 11px; font-weight: 700; }
+    #asp-igor-bi-v2 .aspv2-rules { display: grid; gap: 9px; }
+    #asp-igor-bi-v2 .aspv2-rule { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding-bottom: 9px; border-bottom: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-rule:last-child { padding-bottom: 0; border-bottom: 0; }
+    #asp-igor-bi-v2 .aspv2-rule span { color: var(--aspv2-muted); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-rule b { font-size: 11px; text-align: right; }
+    #asp-igor-bi-v2 .aspv2-callout { margin-top: 10px; padding: 10px; background: var(--aspv2-blue-soft); color: var(--aspv2-blue); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-flow { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; }
+    #asp-igor-bi-v2 .aspv2-step { position: relative; min-height: 92px; padding: 10px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-step:not(:last-child)::after { content: &quot;→&quot;; position: absolute; right: -8px; top: 34px; z-index: 2; color: var(--aspv2-orange); font-weight: 800; }
+    #asp-igor-bi-v2 .aspv2-step small { color: var(--aspv2-muted); }
+    #asp-igor-bi-v2 .aspv2-step b { display: block; margin: 8px 0 3px; font-size: 23px; }
+    #asp-igor-bi-v2 .aspv2-step span { color: var(--aspv2-muted); font-size: 10px; }
+    #asp-igor-bi-v2 .aspv2-tech { border-style: dashed; background: var(--aspv2-surface-alt); }
+    #asp-igor-bi-v2 .aspv2-conversions { display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; margin-top: 10px; }
+    #asp-igor-bi-v2 .aspv2-conversion { padding: 11px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-conversion b { display: block; font-size: 20px; margin-bottom: 4px; }
+    #asp-igor-bi-v2 .aspv2-conversion span { color: var(--aspv2-muted); font-size: 10px; }
+    #asp-igor-bi-v2 .aspv2-table-wrap { overflow-x: auto; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 table { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 11px; }
+    #asp-igor-bi-v2 th, #asp-igor-bi-v2 td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 th { color: var(--aspv2-muted); font-weight: 650; background: var(--aspv2-surface-alt); }
+    #asp-igor-bi-v2 tr:last-child td { border-bottom: 0; }
+    #asp-igor-bi-v2 .aspv2-footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 13px; color: var(--aspv2-muted); font-size: 10px; }
+    @media (max-width: 980px) {
+      #asp-igor-bi-v2 .aspv2-filter-grid { grid-template-columns: repeat(3, minmax(130px,1fr)); }
+      #asp-igor-bi-v2 .aspv2-kpis { grid-template-columns: repeat(3,1fr); }
+      #asp-igor-bi-v2 .aspv2-flow { grid-template-columns: repeat(3,1fr); }
+      #asp-igor-bi-v2 .aspv2-step:nth-child(3)::after { display: none; }
+    }
+    @media (max-width: 700px) {
+      #asp-igor-bi-v2 .aspv2-top, #asp-igor-bi-v2 .aspv2-titlebar { align-items: flex-start; }
+      #asp-igor-bi-v2 .aspv2-freeze, #asp-igor-bi-v2 .aspv2-demo { display: none; }
+      #asp-igor-bi-v2 .aspv2-filter-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      #asp-igor-bi-v2 .aspv2-two { grid-template-columns: 1fr; }
+      #asp-igor-bi-v2 .aspv2-conversions { grid-template-columns: repeat(2,1fr); }
+      #asp-igor-bi-v2 .aspv2-flow { grid-template-columns: repeat(2,1fr); }
+      #asp-igor-bi-v2 .aspv2-step::after { display: none; }
     }
     @media (max-width: 430px) {
-      #asp-fact-day .asp-topbar { align-items: flex-start; }
-      #asp-fact-day .asp-date { display: none; }
-      #asp-fact-day .asp-content { padding: 12px; }
-      #asp-fact-day .asp-kpis { grid-template-columns: 1fr; }
-      #asp-fact-day .asp-bar-row { grid-template-columns: 120px 1fr 30px; gap: 7px; }
-      #asp-fact-day .asp-foot { flex-direction: column; }
+      #asp-igor-bi-v2 .aspv2-shell { padding: 11px; }
+      #asp-igor-bi-v2 .aspv2-filter-head { align-items: flex-start; flex-direction: column; }
+      #asp-igor-bi-v2 .aspv2-filter-grid, #asp-igor-bi-v2 .aspv2-kpis, #asp-igor-bi-v2 .aspv2-flow, #asp-igor-bi-v2 .aspv2-conversions { grid-template-columns: 1fr; }
+      #asp-igor-bi-v2 .aspv2-bar { grid-template-columns: 110px 1fr 30px; }
+      #asp-igor-bi-v2 .aspv2-footer { flex-direction: column; }
     }
   &lt;/style&gt;
 
-  &lt;header class=&quot;asp-topbar&quot;&gt;
-    &lt;div class=&quot;asp-brand&quot;&gt;
-      &lt;div class=&quot;asp-mark&quot;&gt;А&lt;/div&gt;
-      &lt;div class=&quot;asp-brand-copy&quot;&gt;
-        &lt;div class=&quot;asp-brand-name&quot;&gt;ASP AI Экспедитор&lt;/div&gt;
-        &lt;div class=&quot;asp-breadcrumb&quot;&gt;BI-аналитика / Факт дня&lt;/div&gt;
-      &lt;/div&gt;
+  &lt;header class=&quot;aspv2-top&quot;&gt;
+    &lt;div class=&quot;aspv2-brand&quot;&gt;
+      &lt;div class=&quot;aspv2-mark&quot;&gt;А&lt;/div&gt;
+      &lt;div&gt;&lt;div class=&quot;aspv2-product&quot;&gt;ASP AI Экспедитор&lt;/div&gt;&lt;div class=&quot;aspv2-path&quot;&gt;BI-аналитика / Лиды / Факт&lt;/div&gt;&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;asp-date&quot;&gt;&lt;strong&gt;16 июня 2026&lt;/strong&gt;&lt;span&gt;фиксация в 21:00 · Москва&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;aspv2-freeze&quot;&gt;&lt;strong id=&quot;aspv2-freeze-period&quot;&gt;16 июня 2026&lt;/strong&gt;&lt;span&gt;закрыто 16.06.2026 в 21:00 МСК&lt;/span&gt;&lt;/div&gt;
   &lt;/header&gt;
 
-  &lt;main class=&quot;asp-content&quot;&gt;
-    &lt;div class=&quot;asp-title-row&quot;&gt;
-      &lt;div&gt;
-        &lt;h2&gt;Работа с лидами&lt;/h2&gt;
-        &lt;div class=&quot;asp-subtitle&quot; id=&quot;asp-view-description&quot;&gt;Неизменяемое состояние закрытого дня&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;asp-switch&quot; aria-label=&quot;Режим просмотра&quot;&gt;
-        &lt;button type=&quot;button&quot; data-view=&quot;snapshot&quot; aria-pressed=&quot;true&quot;&gt;Факт 21:00&lt;/button&gt;
-        &lt;button type=&quot;button&quot; data-view=&quot;current&quot; aria-pressed=&quot;false&quot;&gt;Текущий срез&lt;/button&gt;
-      &lt;/div&gt;
+  &lt;main class=&quot;aspv2-shell&quot;&gt;
+    &lt;div class=&quot;aspv2-titlebar&quot;&gt;
+      &lt;div&gt;&lt;h2&gt;Факт&lt;/h2&gt;&lt;div class=&quot;aspv2-sub&quot;&gt;Неизменяемый отчёт за выбранный период с раскрытием до дня и лида&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-demo&quot;&gt;Интерактивный макет · демонстрационные значения&lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;section class=&quot;asp-kpis&quot; aria-label=&quot;Основные показатели&quot;&gt;
-      &lt;div class=&quot;asp-kpi&quot;&gt;&lt;div class=&quot;asp-kpi-label&quot;&gt;Лидов создано&lt;/div&gt;&lt;div class=&quot;asp-kpi-value&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;asp-kpi-note&quot;&gt;уникальные карточки&lt;/div&gt;&lt;/div&gt;
-      &lt;div class=&quot;asp-kpi&quot;&gt;&lt;div class=&quot;asp-kpi-label&quot;&gt;Исходящих звонков&lt;/div&gt;&lt;div class=&quot;asp-kpi-value&quot;&gt;399&lt;/div&gt;&lt;div class=&quot;asp-kpi-note&quot;&gt;события телефонии&lt;/div&gt;&lt;/div&gt;
-      &lt;div class=&quot;asp-kpi&quot;&gt;&lt;div class=&quot;asp-kpi-label&quot;&gt;Лидов с исходящим&lt;/div&gt;&lt;div class=&quot;asp-kpi-value&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;asp-kpi-note&quot;&gt;из созданных за день&lt;/div&gt;&lt;/div&gt;
-      &lt;div class=&quot;asp-kpi&quot;&gt;&lt;div class=&quot;asp-kpi-label&quot;&gt;Код соединения 200&lt;/div&gt;&lt;div class=&quot;asp-kpi-value&quot;&gt;58&lt;/div&gt;&lt;div class=&quot;asp-kpi-note&quot;&gt;не равно дозвону до человека&lt;/div&gt;&lt;/div&gt;
-      &lt;div class=&quot;asp-kpi&quot;&gt;&lt;div class=&quot;asp-kpi-label&quot;&gt;Медиана первого звонка&lt;/div&gt;&lt;div class=&quot;asp-kpi-value&quot;&gt;62,1&lt;/div&gt;&lt;div class=&quot;asp-kpi-note&quot;&gt;минуты · выборка 58&lt;/div&gt;&lt;/div&gt;
+    &lt;section class=&quot;aspv2-filters&quot; aria-label=&quot;Настройки отбора&quot;&gt;
+      &lt;div class=&quot;aspv2-filter-head&quot;&gt;&lt;strong&gt;Настройки отбора&lt;/strong&gt;&lt;div class=&quot;aspv2-presets&quot; aria-label=&quot;Быстрый выбор периода&quot;&gt;
+        &lt;button type=&quot;button&quot; data-preset=&quot;day&quot; aria-pressed=&quot;true&quot;&gt;День&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-preset=&quot;week&quot; aria-pressed=&quot;false&quot;&gt;Неделя&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-preset=&quot;month&quot; aria-pressed=&quot;false&quot;&gt;Месяц&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-preset=&quot;custom&quot; aria-pressed=&quot;false&quot;&gt;Период&lt;/button&gt;
+      &lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-filter-grid&quot;&gt;
+        &lt;div class=&quot;aspv2-field&quot;&gt;&lt;label for=&quot;aspv2-from&quot;&gt;Дата от&lt;/label&gt;&lt;input id=&quot;aspv2-from&quot; type=&quot;date&quot; value=&quot;2026-06-16&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-field&quot;&gt;&lt;label for=&quot;aspv2-to&quot;&gt;Дата до&lt;/label&gt;&lt;input id=&quot;aspv2-to&quot; type=&quot;date&quot; value=&quot;2026-06-16&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-field&quot;&gt;&lt;label for=&quot;aspv2-qualifier&quot;&gt;Квалификатор&lt;/label&gt;&lt;select id=&quot;aspv2-qualifier&quot;&gt;&lt;option&gt;Все квалификаторы&lt;/option&gt;&lt;option&gt;Квалификатор 1&lt;/option&gt;&lt;option&gt;Квалификатор 2&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-field&quot;&gt;&lt;label for=&quot;aspv2-km&quot;&gt;Клиентский менеджер&lt;/label&gt;&lt;select id=&quot;aspv2-km&quot;&gt;&lt;option&gt;Все КМ&lt;/option&gt;&lt;option&gt;КМ 1&lt;/option&gt;&lt;option&gt;КМ 2&lt;/option&gt;&lt;option&gt;КМ 3&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-field&quot;&gt;&lt;label for=&quot;aspv2-source&quot;&gt;Источник&lt;/label&gt;&lt;select id=&quot;aspv2-source&quot;&gt;&lt;option&gt;Все источники&lt;/option&gt;&lt;option&gt;Звонок&lt;/option&gt;&lt;option&gt;Веб-форма&lt;/option&gt;&lt;option&gt;Рекомендация&lt;/option&gt;&lt;option&gt;Ручное создание&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-field&quot;&gt;&lt;label for=&quot;aspv2-base&quot;&gt;База / конкурент&lt;/label&gt;&lt;select id=&quot;aspv2-base&quot;&gt;&lt;option&gt;Все базы&lt;/option&gt;&lt;option&gt;Парсинг&lt;/option&gt;&lt;option&gt;Холодная база&lt;/option&gt;&lt;option&gt;Справочник&lt;/option&gt;&lt;option&gt;Конкурент А&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;button type=&quot;button&quot; class=&quot;aspv2-apply&quot; id=&quot;aspv2-apply&quot;&gt;Применить&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;aspv2-chips&quot; id=&quot;aspv2-chips&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
     &lt;/section&gt;
 
-    &lt;div class=&quot;asp-grid&quot;&gt;
-      &lt;section class=&quot;asp-section&quot;&gt;
-        &lt;div class=&quot;asp-section-head&quot;&gt;&lt;h3 id=&quot;asp-status-title&quot;&gt;Состояние на 21:00&lt;/h3&gt;&lt;div class=&quot;asp-total&quot;&gt;80 лидов&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;asp-bars&quot; id=&quot;asp-bars&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
-      &lt;/section&gt;
-      &lt;section class=&quot;asp-section&quot;&gt;
-        &lt;div class=&quot;asp-section-head&quot;&gt;&lt;h3&gt;Качество данных&lt;/h3&gt;&lt;/div&gt;
-        &lt;div class=&quot;asp-quality&quot;&gt;
-          &lt;div class=&quot;asp-quality-row&quot;&gt;&lt;div class=&quot;asp-quality-label&quot;&gt;Связано звонков с лидами&lt;/div&gt;&lt;div class=&quot;asp-quality-value&quot;&gt;508 / 548&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;asp-quality-row&quot;&gt;&lt;div class=&quot;asp-quality-label&quot;&gt;База прозвона заполнена&lt;/div&gt;&lt;div class=&quot;asp-quality-value&quot;&gt;0 / 202&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;asp-quality-row&quot;&gt;&lt;div class=&quot;asp-quality-label&quot;&gt;CRM-активностей&lt;/div&gt;&lt;div class=&quot;asp-quality-value&quot;&gt;755&lt;/div&gt;&lt;/div&gt;
-          &lt;div class=&quot;asp-quality-row&quot;&gt;&lt;div class=&quot;asp-quality-label&quot;&gt;История стадий&lt;/div&gt;&lt;div class=&quot;asp-quality-value&quot;&gt;139 событий&lt;/div&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;asp-warning&quot; id=&quot;asp-warning&quot;&gt;Снимок закрыт: последующие изменения карточек не пересчитывают показатели дня.&lt;/div&gt;
-      &lt;/section&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;asp-foot&quot;&gt;&lt;span&gt;Источник: Bitrix24 · локальный аналитический слой только на чтение&lt;/span&gt;&lt;span&gt;Идентификаторы обезличены&lt;/span&gt;&lt;/div&gt;
+    &lt;nav class=&quot;aspv2-tabs&quot; aria-label=&quot;Разделы отчёта&quot;&gt;
+      &lt;button type=&quot;button&quot; data-tab=&quot;activity&quot; aria-pressed=&quot;true&quot;&gt;Активность квалификатора&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-tab=&quot;state&quot; aria-pressed=&quot;false&quot;&gt;Состояние лидов&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-tab=&quot;km&quot; aria-pressed=&quot;false&quot;&gt;Эффективность КМ&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-tab=&quot;detail&quot; aria-pressed=&quot;false&quot;&gt;Детализация&lt;/button&gt;
+    &lt;/nav&gt;
+
+    &lt;section class=&quot;aspv2-view&quot; data-view=&quot;activity&quot; data-open=&quot;true&quot;&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фактическая активность квалификатора&lt;/h3&gt;&lt;span&gt;События периода; один лид может иметь несколько действий&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-kpis&quot;&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов получено&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;received&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;назначено в периоде&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов создано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;created&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;уникальные карточки&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Уникальных обработано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;processed&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;COUNT DISTINCT lead_id&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Попыток звонка&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;calls&quot;&gt;399&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;события телефонии&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Успешный дозвон&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;connected&quot;&gt;58&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;до утверждения классификатора — условно&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Передано КМ&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;transferred&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;первый вход в стадию&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Без следующего дела&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value aspv2-risk&quot; data-metric=&quot;noNext&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;остаток на 21:00&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Просроченные дела&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value aspv2-risk&quot; data-metric=&quot;overdue&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;остаток на 21:00&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Необработанная очередь&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;queue&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;на конец периода&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Медиана первого контакта&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;median&quot;&gt;62&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;минут · валидная выборка&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Среднее первого контакта&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;average&quot;&gt;93&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;минут&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Среднее до передачи КМ&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;handoff&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;минут · цель ≤ 30&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;aspv2-two&quot;&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Активность по дням&lt;/strong&gt;&lt;span&gt;переход: период → день → лиды&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-bars&quot; id=&quot;aspv2-activity-bars&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Контроль SLA и качества&lt;/strong&gt;&lt;span&gt;на момент закрытия&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Первая попытка ≤ 2 рабочих часов&lt;/span&gt;&lt;b class=&quot;aspv2-ok&quot;&gt;72%&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Передача КМ ≤ 30 минут&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;50%&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;«Нет ответа»: 3 попытки / 3 рабочих дня&lt;/span&gt;&lt;b&gt;обязательное правило&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;История и детализация&lt;/span&gt;&lt;b&gt;36 месяцев&lt;/b&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&quot;aspv2-callout&quot;&gt;События активности считаются отдельно от остатков по стадиям.&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;aspv2-view&quot; data-view=&quot;state&quot; data-open=&quot;false&quot;&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фиксированное состояние лидов&lt;/h3&gt;&lt;span&gt;Один лид — одно состояние на конец выбранного периода; дневные остатки не суммируются&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-two&quot;&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Состояние на дату «до», 21:00 МСК&lt;/strong&gt;&lt;span id=&quot;aspv2-state-total&quot;&gt;80 уникальных лидов&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-bars&quot; id=&quot;aspv2-state-bars&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Правило периода&lt;/strong&gt;&lt;span&gt;защита от двойного счёта&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Активность&lt;/span&gt;&lt;b&gt;сумма событий&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Состояние&lt;/span&gt;&lt;b&gt;последний снимок&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Уникальные лиды&lt;/span&gt;&lt;b&gt;COUNT DISTINCT&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Прошлые дни&lt;/span&gt;&lt;b&gt;не пересчитываются&lt;/b&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;div class=&quot;aspv2-callout&quot;&gt;Если лид три дня оставался на «Втором касании», в итог периода он попадёт один раз.&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;aspv2-view&quot; data-view=&quot;km&quot; data-open=&quot;false&quot;&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Эффективность после передачи клиентскому менеджеру&lt;/h3&gt;&lt;span&gt;Автосоздание обращения отделено от фактической работы КМ&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-flow&quot;&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Передано КМ&lt;/small&gt;&lt;b data-metric=&quot;transferred&quot;&gt;4&lt;/b&gt;&lt;span&gt;когорта входящих лидов&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step aspv2-tech&quot;&gt;&lt;small&gt;Автосоздано обращений&lt;/small&gt;&lt;b data-metric=&quot;autoAppeals&quot;&gt;4&lt;/b&gt;&lt;span&gt;технический показатель · не KPI КМ&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Принято КМ в работу&lt;/small&gt;&lt;b data-metric=&quot;accepted&quot;&gt;3&lt;/b&gt;&lt;span&gt;первый нетехнический переход&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Создано заказов&lt;/small&gt;&lt;b data-metric=&quot;orders&quot;&gt;2&lt;/b&gt;&lt;span&gt;из переданной когорты&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Создано сделок&lt;/small&gt;&lt;b data-metric=&quot;deals&quot;&gt;1&lt;/b&gt;&lt;span&gt;сквозная связь до сделки&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;aspv2-conversions&quot;&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;acceptanceRate&quot;&gt;75%&lt;/b&gt;&lt;span&gt;Принятие в работу = принятые / переданные КМ&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;orderRate&quot;&gt;50%&lt;/b&gt;&lt;span&gt;Переданный лид → заказ&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;dealRate&quot;&gt;25%&lt;/b&gt;&lt;span&gt;Переданный лид → сделка&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;failRate&quot;&gt;25%&lt;/b&gt;&lt;span&gt;Провалы после передачи / переданные КМ&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;aspv2-panel&quot; style=&quot;margin-top:10px&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Результаты в разрезе КМ&lt;/strong&gt;&lt;span&gt;фильтр КМ применяется к этому блоку и связанной когорте&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;КМ&lt;/th&gt;&lt;th&gt;Передано&lt;/th&gt;&lt;th&gt;Автосоздано&lt;/th&gt;&lt;th&gt;Принято&lt;/th&gt;&lt;th&gt;Заказы&lt;/th&gt;&lt;th&gt;Сделки&lt;/th&gt;&lt;th&gt;Провалы&lt;/th&gt;&lt;th&gt;Время принятия&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-km-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;aspv2-view&quot; data-view=&quot;detail&quot; data-open=&quot;false&quot;&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Детализация и контроль данных&lt;/h3&gt;&lt;span&gt;период → день → карточка лида&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Дата&lt;/th&gt;&lt;th&gt;Лид&lt;/th&gt;&lt;th&gt;Квалификатор&lt;/th&gt;&lt;th&gt;КМ&lt;/th&gt;&lt;th&gt;Источник&lt;/th&gt;&lt;th&gt;База&lt;/th&gt;&lt;th&gt;Состояние 21:00&lt;/th&gt;&lt;th&gt;Попытки&lt;/th&gt;&lt;th&gt;Следующее дело&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-detail-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-two&quot;&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Качество данных&lt;/strong&gt;&lt;span&gt;влияет на доступность фильтров&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Источник заполнен&lt;/span&gt;&lt;b&gt;202 / 202&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;База прозвона заполнена&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;0 / 202&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;История первоначального КМ&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;нужен событийный слой&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Автор перехода стадии&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;не отдаётся стандартной историей&lt;/b&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Трактовка фильтров&lt;/strong&gt;&lt;span&gt;чтобы показатели не меняли смысл&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Квалификатор&lt;/span&gt;&lt;b&gt;первоначально назначенный&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;КМ&lt;/span&gt;&lt;b&gt;получатель переданной когорты&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Источник&lt;/span&gt;&lt;b&gt;канал поступления&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;База / конкурент&lt;/span&gt;&lt;b&gt;отдельный справочник&lt;/b&gt;&lt;/div&gt;
+        &lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=&quot;aspv2-footer&quot;&gt;&lt;span&gt;Факт закрывается ежедневно в 21:00 МСК; после закрытия не изменяется&lt;/span&gt;&lt;span&gt;Источник: Bitrix24 → отдельный аналитический слой → BI Конструктор&lt;/span&gt;&lt;/footer&gt;
   &lt;/main&gt;
 
   &lt;script&gt;
     (() =&gt; {
-      const root = document.getElementById(&#x27;asp-fact-day&#x27;);
-      const datasets = {
-        snapshot: [
-          [&#x27;Первичный контакт&#x27;, 47], [&#x27;Нецелевой лид&#x27;, 17], [&#x27;Второе касание&#x27;, 11],
-          [&#x27;Передан КМ&#x27;, 4], [&#x27;Попросил перезвонить&#x27;, 1]
-        ],
-        current: [
-          [&#x27;Первичный контакт&#x27;, 47], [&#x27;Нецелевой лид&#x27;, 21], [&#x27;Передан КМ&#x27;, 6], [&#x27;Нет ответа&#x27;, 6]
-        ]
+      const root = document.getElementById(&#x27;asp-igor-bi-v2&#x27;);
+      if (!root) return;
+      const base = {
+        received:80, created:80, processed:63, calls:399, connected:58, transferred:4,
+        noNext:9, overdue:6, queue:17, median:62, average:93, handoff:38,
+        autoAppeals:4, accepted:3, orders:2, deals:1, failures:1
       };
-      function render(view) {
-        const rows = datasets[view];
-        const max = Math.max(...rows.map(row =&gt; row[1]));
-        root.querySelector(&#x27;#asp-bars&#x27;).innerHTML = rows.map(([label, value]) =&gt; `
-          &lt;div class=&quot;asp-bar-row&quot;&gt;
-            &lt;div class=&quot;asp-bar-label&quot; title=&quot;${label}&quot;&gt;${label}&lt;/div&gt;
-            &lt;div class=&quot;asp-track&quot;&gt;&lt;div class=&quot;asp-fill&quot; style=&quot;width:${(value / max * 100).toFixed(1)}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-            &lt;div class=&quot;asp-bar-value&quot;&gt;${value}&lt;/div&gt;
-          &lt;/div&gt;`).join(&#x27;&#x27;);
-        root.querySelector(&#x27;#asp-status-title&#x27;).textContent = view === &#x27;snapshot&#x27; ? &#x27;Состояние на 21:00&#x27; : &#x27;Состояние сегодня&#x27;;
-        root.querySelector(&#x27;#asp-view-description&#x27;).textContent = view === &#x27;snapshot&#x27; ? &#x27;Неизменяемое состояние закрытого дня&#x27; : &#x27;Карточки с учётом последующих изменений&#x27;;
-        root.querySelector(&#x27;#asp-warning&#x27;).textContent = view === &#x27;snapshot&#x27;
-          ? &#x27;Снимок закрыт: последующие изменения карточек не пересчитывают показатели дня.&#x27;
-          : &#x27;Текущий срез изменился: он не может заменять факт закрытого дня.&#x27;;
-        root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(button =&gt; button.setAttribute(&#x27;aria-pressed&#x27;, String(button.dataset.view === view)));
+      const statusBase = [
+        [&#x27;Первичный контакт&#x27;,47], [&#x27;Второе касание&#x27;,11], [&#x27;Третье касание&#x27;,0],
+        [&#x27;Просили перезвонить&#x27;,1], [&#x27;Передан КМ&#x27;,4], [&#x27;Нецелевой&#x27;,17],
+        [&#x27;Нет ответа&#x27;,0], [&#x27;Сейчас не актуально&#x27;,0], [&#x27;Сделка&#x27;,0], [&#x27;Провал&#x27;,0]
+      ];
+      const kmRows = [
+        [&#x27;КМ 1&#x27;,2,2,2,1,1,0,&#x27;54 мин&#x27;],
+        [&#x27;КМ 2&#x27;,1,1,1,1,0,0,&#x27;1 ч 18 мин&#x27;],
+        [&#x27;КМ 3&#x27;,1,1,0,0,0,1,&#x27;—&#x27;]
+      ];
+      const details = [
+        [&#x27;16.06&#x27;,&#x27;L-0161&#x27;,&#x27;Квалификатор 1&#x27;,&#x27;КМ 1&#x27;,&#x27;Звонок&#x27;,&#x27;Парсинг&#x27;,&#x27;Передан КМ&#x27;,3,&#x27;17.06 10:00&#x27;],
+        [&#x27;16.06&#x27;,&#x27;L-0162&#x27;,&#x27;Квалификатор 1&#x27;,&#x27;КМ 2&#x27;,&#x27;Звонок&#x27;,&#x27;Холодная база&#x27;,&#x27;Второе касание&#x27;,2,&#x27;17.06 12:00&#x27;],
+        [&#x27;16.06&#x27;,&#x27;L-0163&#x27;,&#x27;Квалификатор 2&#x27;,&#x27;КМ 3&#x27;,&#x27;Ручное создание&#x27;,&#x27;Справочник&#x27;,&#x27;Нецелевой&#x27;,1,&#x27;—&#x27;],
+        [&#x27;16.06&#x27;,&#x27;L-0164&#x27;,&#x27;Квалификатор 2&#x27;,&#x27;КМ 1&#x27;,&#x27;Рекомендация&#x27;,&#x27;Конкурент А&#x27;,&#x27;Просили перезвонить&#x27;,2,&#x27;18.06 09:00&#x27;]
+      ];
+      const els = {
+        from: root.querySelector(&#x27;#aspv2-from&#x27;), to: root.querySelector(&#x27;#aspv2-to&#x27;),
+        qualifier: root.querySelector(&#x27;#aspv2-qualifier&#x27;), km: root.querySelector(&#x27;#aspv2-km&#x27;),
+        source: root.querySelector(&#x27;#aspv2-source&#x27;), base: root.querySelector(&#x27;#aspv2-base&#x27;),
+        chips: root.querySelector(&#x27;#aspv2-chips&#x27;)
+      };
+      const fmt = d =&gt; new Intl.DateTimeFormat(&#x27;ru-RU&#x27;,{day:&#x27;numeric&#x27;,month:&#x27;short&#x27;,year:&#x27;numeric&#x27;}).format(new Date(`${d}T12:00:00`));
+      const days = () =&gt; Math.max(1, Math.round((new Date(els.to.value) - new Date(els.from.value))/86400000)+1);
+      const factor = () =&gt; {
+        let f = Math.min(4, Math.sqrt(days()));
+        if (els.qualifier.selectedIndex &gt; 0) f *= .52;
+        if (els.km.selectedIndex &gt; 0) f *= .34;
+        if (els.source.selectedIndex &gt; 0 &amp;&amp; els.source.value !== &#x27;Звонок&#x27;) f *= .22;
+        if (els.base.selectedIndex &gt; 0) f *= .31;
+        return f;
+      };
+      const metricValue = (key, f) =&gt; {
+        if ([&#x27;median&#x27;,&#x27;average&#x27;,&#x27;handoff&#x27;].includes(key)) return Math.round(base[key] * (1 + (f-1)*.04));
+        return Math.max(key === &#x27;deals&#x27; || key === &#x27;failures&#x27; ? 0 : 1, Math.round(base[key]*f));
+      };
+      function bars(target, rows) {
+        const max = Math.max(1,...rows.map(r=&gt;r[1]));
+        target.innerHTML = rows.map(([label,value]) =&gt; `&lt;div class=&quot;aspv2-bar&quot;&gt;&lt;div class=&quot;aspv2-bar-label&quot; title=&quot;${label}&quot;&gt;${label}&lt;/div&gt;&lt;div class=&quot;aspv2-track&quot;&gt;&lt;div class=&quot;aspv2-fill&quot; style=&quot;width:${Math.round(value/max*100)}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-bar-value&quot;&gt;${value}&lt;/div&gt;&lt;/div&gt;`).join(&#x27;&#x27;);
       }
-      root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;, () =&gt; render(button.dataset.view)));
-      render(&#x27;snapshot&#x27;);
+      function renderTables(f) {
+        const selectedKm = els.km.value;
+        const filteredKm = kmRows.filter(r =&gt; selectedKm === &#x27;Все КМ&#x27; || r[0] === selectedKm);
+        root.querySelector(&#x27;#aspv2-km-rows&#x27;).innerHTML = filteredKm.map(r=&gt;`&lt;tr&gt;${r.map(c=&gt;`&lt;td&gt;${c}&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;);
+        const filteredDetails = details.filter(r =&gt;
+          (els.qualifier.value === &#x27;Все квалификаторы&#x27; || r[2] === els.qualifier.value) &amp;&amp;
+          (els.km.value === &#x27;Все КМ&#x27; || r[3] === els.km.value) &amp;&amp;
+          (els.source.value === &#x27;Все источники&#x27; || r[4] === els.source.value) &amp;&amp;
+          (els.base.value === &#x27;Все базы&#x27; || r[5] === els.base.value));
+        root.querySelector(&#x27;#aspv2-detail-rows&#x27;).innerHTML = (filteredDetails.length ? filteredDetails : [[&#x27;—&#x27;,&#x27;Нет строк для выбранного сочетания&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;]]).map(r=&gt;`&lt;tr&gt;${r.map(c=&gt;`&lt;td&gt;${c}&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;);
+      }
+      function applyFilters() {
+        if (els.from.value &gt; els.to.value) els.to.value = els.from.value;
+        const f = factor();
+        root.querySelectorAll(&#x27;[data-metric]&#x27;).forEach(node =&gt; {
+          const key = node.dataset.metric;
+          if (key.endsWith(&#x27;Rate&#x27;)) return;
+          node.textContent = metricValue(key,f);
+        });
+        const transferred = metricValue(&#x27;transferred&#x27;,f);
+        const accepted = metricValue(&#x27;accepted&#x27;,f);
+        const orders = metricValue(&#x27;orders&#x27;,f);
+        const deals = metricValue(&#x27;deals&#x27;,f);
+        const failures = metricValue(&#x27;failures&#x27;,f);
+        const pct = (v,d) =&gt; d ? `${Math.round(v/d*100)}%` : &#x27;—&#x27;;
+        root.querySelector(&#x27;[data-metric=&quot;acceptanceRate&quot;]&#x27;).textContent = pct(accepted,transferred);
+        root.querySelector(&#x27;[data-metric=&quot;orderRate&quot;]&#x27;).textContent = pct(orders,transferred);
+        root.querySelector(&#x27;[data-metric=&quot;dealRate&quot;]&#x27;).textContent = pct(deals,transferred);
+        root.querySelector(&#x27;[data-metric=&quot;failRate&quot;]&#x27;).textContent = pct(failures,transferred);
+        const statusRows = statusBase.map(([label,value])=&gt;[label,Math.max(value ? 1 : 0,Math.round(value*f))]);
+        bars(root.querySelector(&#x27;#aspv2-state-bars&#x27;), statusRows);
+        const total = statusRows.reduce((s,r)=&gt;s+r[1],0);
+        root.querySelector(&#x27;#aspv2-state-total&#x27;).textContent = `${total} уникальных лидов`;
+        const dayCount = Math.min(7,days());
+        const activityRows = Array.from({length:dayCount},(_,i)=&gt;{
+          const d = new Date(els.to.value); d.setDate(d.getDate()-(dayCount-1-i));
+          return [new Intl.DateTimeFormat(&#x27;ru-RU&#x27;,{day:&#x27;2-digit&#x27;,month:&#x27;2-digit&#x27;}).format(d),Math.max(1,Math.round(metricValue(&#x27;processed&#x27;,f)/dayCount*(.78+i*.07)))];
+        });
+        bars(root.querySelector(&#x27;#aspv2-activity-bars&#x27;), activityRows);
+        els.chips.innerHTML = [
+          `${fmt(els.from.value)} — ${fmt(els.to.value)}`,
+          els.qualifier.value, els.km.value, els.source.value, els.base.value
+        ].map(v=&gt;`&lt;span class=&quot;aspv2-chip&quot;&gt;${v}&lt;/span&gt;`).join(&#x27;&#x27;);
+        root.querySelector(&#x27;#aspv2-freeze-period&#x27;).textContent = els.from.value === els.to.value ? fmt(els.to.value) : `${fmt(els.from.value)} — ${fmt(els.to.value)}`;
+        renderTables(f);
+      }
+      root.querySelectorAll(&#x27;[data-preset]&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;,()=&gt;{
+        const p = button.dataset.preset;
+        root.querySelectorAll(&#x27;[data-preset]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-pressed&#x27;,String(b===button)));
+        const end = new Date(&#x27;2026-06-16T12:00:00&#x27;);
+        const start = new Date(end);
+        if (p === &#x27;week&#x27;) start.setDate(start.getDate()-6);
+        if (p === &#x27;month&#x27;) start.setDate(1);
+        if (p !== &#x27;custom&#x27;) {
+          els.from.value = start.toISOString().slice(0,10);
+          els.to.value = end.toISOString().slice(0,10);
+          applyFilters();
+        } else { els.from.focus(); }
+      }));
+      root.querySelector(&#x27;#aspv2-apply&#x27;).addEventListener(&#x27;click&#x27;,applyFilters);
+      root.querySelectorAll(&#x27;[data-tab]&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;,()=&gt;{
+        root.querySelectorAll(&#x27;[data-tab]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-pressed&#x27;,String(b===button)));
+        root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(v=&gt;v.dataset.open=String(v.dataset.view===button.dataset.tab));
+      }));
+      applyFilters();
     })();
   &lt;/script&gt;
 &lt;/div&gt;

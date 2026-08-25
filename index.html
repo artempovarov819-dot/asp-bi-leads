@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>BI-отчёт «Факт» по лидам — ASP AI Экспедитор</title>
+<title>BI-отчёт по лидам — ASP AI Экспедитор</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
-<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="BI-отчёт «Факт» по лидам" srcdoc="&lt;!doctype html&gt;
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="BI-отчёт по лидам ASP AI Экспедитор" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -973,6 +973,12 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     #asp-igor-bi-v2 .aspv2-chips { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 10px; color: var(--aspv2-muted); font-size: 11px; }
     #asp-igor-bi-v2 .aspv2-chip { padding: 5px 7px; background: var(--aspv2-surface-alt); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-period-check { display: grid; grid-template-columns: repeat(2,minmax(160px,220px)) 1fr; gap: 9px; margin-top: 10px; }
+    #asp-igor-bi-v2 .aspv2-period-stat { padding: 9px 10px; background: var(--aspv2-surface-alt); border: 1px solid var(--aspv2-line); }
+    #asp-igor-bi-v2 .aspv2-period-stat span { display: block; color: var(--aspv2-muted); font-size: 10px; }
+    #asp-igor-bi-v2 .aspv2-period-stat b { display: block; margin-top: 3px; font-size: 18px; }
+    #asp-igor-bi-v2 .aspv2-period-note { align-self: center; color: var(--aspv2-green); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-period-note.is-risk { color: var(--aspv2-red); }
     #asp-igor-bi-v2 .aspv2-tabs { display: flex; gap: 0; margin-top: 14px; border-bottom: 1px solid var(--aspv2-line); overflow-x: auto; }
     #asp-igor-bi-v2 .aspv2-tabs button {
       border: 0; border-bottom: 3px solid transparent; padding: 10px 14px; background: transparent;
@@ -1037,13 +1043,16 @@ html&gt;body{padding:0}&lt;/style&gt;
       #asp-igor-bi-v2 .aspv2-filter-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
       #asp-igor-bi-v2 .aspv2-two { grid-template-columns: 1fr; }
       #asp-igor-bi-v2 .aspv2-conversions { grid-template-columns: repeat(2,1fr); }
+      #asp-igor-bi-v2 .aspv2-period-check { grid-template-columns: repeat(2,1fr); }
+      #asp-igor-bi-v2 .aspv2-period-note { grid-column: 1 / -1; }
       #asp-igor-bi-v2 .aspv2-flow { grid-template-columns: repeat(2,1fr); }
       #asp-igor-bi-v2 .aspv2-step::after { display: none; }
     }
     @media (max-width: 430px) {
       #asp-igor-bi-v2 .aspv2-shell { padding: 11px; }
       #asp-igor-bi-v2 .aspv2-filter-head { align-items: flex-start; flex-direction: column; }
-      #asp-igor-bi-v2 .aspv2-filter-grid, #asp-igor-bi-v2 .aspv2-kpis, #asp-igor-bi-v2 .aspv2-flow, #asp-igor-bi-v2 .aspv2-conversions { grid-template-columns: 1fr; }
+      #asp-igor-bi-v2 .aspv2-filter-grid, #asp-igor-bi-v2 .aspv2-kpis, #asp-igor-bi-v2 .aspv2-flow, #asp-igor-bi-v2 .aspv2-conversions, #asp-igor-bi-v2 .aspv2-period-check { grid-template-columns: 1fr; }
+      #asp-igor-bi-v2 .aspv2-period-note { grid-column: auto; }
       #asp-igor-bi-v2 .aspv2-bar { grid-template-columns: 110px 1fr 30px; }
       #asp-igor-bi-v2 .aspv2-footer { flex-direction: column; }
     }
@@ -1080,6 +1089,11 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;button type=&quot;button&quot; class=&quot;aspv2-apply&quot; id=&quot;aspv2-apply&quot;&gt;Применить&lt;/button&gt;
       &lt;/div&gt;
       &lt;div class=&quot;aspv2-chips&quot; id=&quot;aspv2-chips&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-period-check&quot; aria-live=&quot;polite&quot;&gt;
+        &lt;div class=&quot;aspv2-period-stat&quot;&gt;&lt;span&gt;Дней в выбранном периоде&lt;/span&gt;&lt;b id=&quot;aspv2-period-days&quot;&gt;1&lt;/b&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-period-stat&quot;&gt;&lt;span&gt;Закрытых дневных снимков&lt;/span&gt;&lt;b id=&quot;aspv2-closed-snapshots&quot;&gt;1 из 1&lt;/b&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-period-note&quot; id=&quot;aspv2-snapshot-note&quot;&gt;Данные периода закрыты полностью.&lt;/div&gt;
+      &lt;/div&gt;
     &lt;/section&gt;
 
     &lt;nav class=&quot;aspv2-tabs&quot; aria-label=&quot;Разделы отчёта&quot;&gt;
@@ -1092,10 +1106,10 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;section class=&quot;aspv2-view&quot; data-view=&quot;activity&quot; data-open=&quot;true&quot;&gt;
       &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фактическая активность квалификатора&lt;/h3&gt;&lt;span&gt;События периода; один лид может иметь несколько действий&lt;/span&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-kpis&quot;&gt;
-        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов получено&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;received&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;назначено в периоде&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов создано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;created&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;уникальные карточки&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Контактов передано для загрузки&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;provided&quot;&gt;84&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;входной реестр контактов&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов создано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;created&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot; id=&quot;aspv2-created-note&quot;&gt;95% от переданных контактов&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Уникальных обработано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;processed&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;COUNT DISTINCT lead_id&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Попыток звонка&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;calls&quot;&gt;399&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;события телефонии&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов с попыткой связи&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;attempted&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot; id=&quot;aspv2-attempt-note&quot;&gt;399 попыток всего · 6,3 на охваченный лид&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Успешный дозвон&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;connected&quot;&gt;58&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;до утверждения классификатора — условно&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Передано КМ&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;transferred&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;первый вход в стадию&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Без следующего дела&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value aspv2-risk&quot; data-metric=&quot;noNext&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;остаток на 21:00&lt;/div&gt;&lt;/div&gt;
@@ -1104,6 +1118,13 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Медиана первого контакта&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;median&quot;&gt;62&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;минут · валидная выборка&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Среднее первого контакта&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;average&quot;&gt;93&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;минут&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Среднее до передачи КМ&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;handoff&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;минут · цель ≤ 30&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Конверсия от созданных карточек&lt;/h3&gt;&lt;span&gt;единый знаменатель — уникальные созданные лиды&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-conversions&quot;&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;processingCoverage&quot;&gt;79%&lt;/b&gt;&lt;span&gt;Охват обработкой = уникально обработано / создано&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;callCoverage&quot;&gt;79%&lt;/b&gt;&lt;span&gt;Охват звонками = лиды с попыткой / создано&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;reachRate&quot;&gt;73%&lt;/b&gt;&lt;span&gt;Дозвон от созданных = успешный дозвон / создано&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;transferRate&quot;&gt;5%&lt;/b&gt;&lt;span&gt;Передано КМ / создано&lt;/span&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;aspv2-two&quot;&gt;
         &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Активность по дням&lt;/strong&gt;&lt;span&gt;переход: период → день → лиды&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-bars&quot; id=&quot;aspv2-activity-bars&quot;&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1174,7 +1195,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       const root = document.getElementById(&#x27;asp-igor-bi-v2&#x27;);
       if (!root) return;
       const base = {
-        received:80, created:80, processed:63, calls:399, connected:58, transferred:4,
+        provided:84, received:80, created:80, processed:63, attempted:63, calls:399, connected:58, transferred:4,
         noNext:9, overdue:6, queue:17, median:62, average:93, handoff:38,
         autoAppeals:4, accepted:3, orders:2, deals:1, failures:1
       };
@@ -1234,15 +1255,35 @@ html&gt;body{padding:0}&lt;/style&gt;
         const f = factor();
         root.querySelectorAll(&#x27;[data-metric]&#x27;).forEach(node =&gt; {
           const key = node.dataset.metric;
-          if (key.endsWith(&#x27;Rate&#x27;)) return;
+          if (key.endsWith(&#x27;Rate&#x27;) || key.endsWith(&#x27;Coverage&#x27;)) return;
           node.textContent = metricValue(key,f);
         });
-        const transferred = metricValue(&#x27;transferred&#x27;,f);
+        const provided = metricValue(&#x27;provided&#x27;,f);
+        const created = Math.min(provided,metricValue(&#x27;created&#x27;,f));
+        const processed = Math.min(created,metricValue(&#x27;processed&#x27;,f));
+        const attempted = Math.min(created,metricValue(&#x27;attempted&#x27;,f));
+        const connected = Math.min(attempted,metricValue(&#x27;connected&#x27;,f));
+        const transferred = Math.min(created,metricValue(&#x27;transferred&#x27;,f));
         const accepted = metricValue(&#x27;accepted&#x27;,f);
         const orders = metricValue(&#x27;orders&#x27;,f);
         const deals = metricValue(&#x27;deals&#x27;,f);
         const failures = metricValue(&#x27;failures&#x27;,f);
         const pct = (v,d) =&gt; d ? `${Math.round(v/d*100)}%` : &#x27;—&#x27;;
+        const setMetric = (key,value) =&gt; root.querySelectorAll(`[data-metric=&quot;${key}&quot;]`).forEach(node=&gt;node.textContent=value);
+        setMetric(&#x27;provided&#x27;,provided);
+        setMetric(&#x27;created&#x27;,created);
+        setMetric(&#x27;processed&#x27;,processed);
+        setMetric(&#x27;attempted&#x27;,attempted);
+        setMetric(&#x27;connected&#x27;,connected);
+        setMetric(&#x27;transferred&#x27;,transferred);
+        setMetric(&#x27;processingCoverage&#x27;,pct(processed,created));
+        setMetric(&#x27;callCoverage&#x27;,pct(attempted,created));
+        setMetric(&#x27;reachRate&#x27;,pct(connected,created));
+        setMetric(&#x27;transferRate&#x27;,pct(transferred,created));
+        root.querySelector(&#x27;#aspv2-created-note&#x27;).textContent = `${pct(created,provided)} от переданных контактов`;
+        const totalCalls = metricValue(&#x27;calls&#x27;,f);
+        const attemptsPerLead = attempted ? (totalCalls/attempted).toFixed(1).replace(&#x27;.&#x27;,&#x27;,&#x27;) : &#x27;—&#x27;;
+        root.querySelector(&#x27;#aspv2-attempt-note&#x27;).textContent = `${totalCalls} попыток всего · ${attemptsPerLead} на охваченный лид`;
         root.querySelector(&#x27;[data-metric=&quot;acceptanceRate&quot;]&#x27;).textContent = pct(accepted,transferred);
         root.querySelector(&#x27;[data-metric=&quot;orderRate&quot;]&#x27;).textContent = pct(orders,transferred);
         root.querySelector(&#x27;[data-metric=&quot;dealRate&quot;]&#x27;).textContent = pct(deals,transferred);
@@ -1261,6 +1302,18 @@ html&gt;body{padding:0}&lt;/style&gt;
           `${fmt(els.from.value)} — ${fmt(els.to.value)}`,
           els.qualifier.value, els.km.value, els.source.value, els.base.value
         ].map(v=&gt;`&lt;span class=&quot;aspv2-chip&quot;&gt;${v}&lt;/span&gt;`).join(&#x27;&#x27;);
+        const selectedDays = days();
+        const snapshotCutoff = new Date(&#x27;2026-06-16T12:00:00&#x27;);
+        const fromDate = new Date(`${els.from.value}T12:00:00`);
+        const toDate = new Date(`${els.to.value}T12:00:00`);
+        const closedEnd = toDate &lt; snapshotCutoff ? toDate : snapshotCutoff;
+        const closedSnapshots = fromDate &gt; snapshotCutoff ? 0 : Math.max(0,Math.min(selectedDays,Math.round((closedEnd-fromDate)/86400000)+1));
+        root.querySelector(&#x27;#aspv2-period-days&#x27;).textContent = selectedDays;
+        root.querySelector(&#x27;#aspv2-closed-snapshots&#x27;).textContent = `${closedSnapshots} из ${selectedDays}`;
+        const snapshotNote = root.querySelector(&#x27;#aspv2-snapshot-note&#x27;);
+        const complete = closedSnapshots === selectedDays;
+        snapshotNote.textContent = complete ? &#x27;Данные периода закрыты полностью.&#x27; : `Не закрыто дневных снимков: ${selectedDays-closedSnapshots}.`;
+        snapshotNote.classList.toggle(&#x27;is-risk&#x27;,!complete);
         root.querySelector(&#x27;#aspv2-freeze-period&#x27;).textContent = els.from.value === els.to.value ? fmt(els.to.value) : `${fmt(els.from.value)} — ${fmt(els.to.value)}`;
         renderTables(f);
       }

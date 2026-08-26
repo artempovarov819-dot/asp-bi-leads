@@ -9,14 +9,14 @@
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
-<iframe referrerpolicy="no-referrer" title="BI-отчёт по лидам ASP AI Экспедитор" srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<iframe sandbox="allow-scripts allow-downloads" referrerpolicy="no-referrer" title="BI-отчёт по лидам ASP AI Экспедитор" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;Igor Full Bi Dashboard&lt;/title&gt;
+&lt;title&gt;BI-отчёт по лидам — ASP AI Экспедитор&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -1061,9 +1061,13 @@ html&gt;body{padding:0}&lt;/style&gt;
     #asp-igor-bi-v2 .aspv2-columns summary { list-style: none; cursor: pointer; }
     #asp-igor-bi-v2 .aspv2-column-menu { position: absolute; right: 0; z-index: 5; width: 260px; max-height: 310px; overflow: auto; padding: 10px; background: var(--aspv2-surface); border: 1px solid var(--aspv2-line); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
     #asp-igor-bi-v2 .aspv2-column-menu label { display: block; padding: 4px 0; font-size: 11px; }
-    #asp-igor-bi-v2 .aspv2-drill-banner { display: none; justify-content: space-between; gap: 10px; margin-bottom: 9px; padding: 9px 10px; background: var(--aspv2-orange-soft); color: var(--aspv2-text); font-size: 11px; }
+    #asp-igor-bi-v2 .aspv2-drill-banner { display: none; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 9px; padding: 9px 10px; background: var(--aspv2-orange-soft); color: var(--aspv2-text); font-size: 11px; }
     #asp-igor-bi-v2 .aspv2-drill-banner[data-open=&quot;true&quot;] { display: flex; }
     #asp-igor-bi-v2 .aspv2-drill-banner button { border: 0; background: transparent; color: var(--aspv2-orange); cursor: pointer; }
+    #asp-igor-bi-v2 .aspv2-cell-button { border: 0; background: transparent; color: var(--aspv2-blue); cursor: pointer; text-decoration: underline; padding: 0; }
+    #asp-igor-bi-v2 .aspv2-detail-count { margin: 8px 0; color: var(--aspv2-muted); font-size: 12px; }
+    #asp-igor-bi-v2 .aspv2-demo-card { border: 1px solid var(--aspv2-line); color: var(--aspv2-text); background: var(--aspv2-surface); width: min(540px,90vw); }
+    #asp-igor-bi-v2 .aspv2-demo-card::backdrop { background: rgba(0,0,0,.45); }
     #asp-igor-bi-v2 .aspv2-footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 13px; color: var(--aspv2-muted); font-size: 10px; }
     @media (max-width: 980px) {
       #asp-igor-bi-v2 .aspv2-filter-grid { grid-template-columns: repeat(3, minmax(130px,1fr)); }
@@ -1073,7 +1077,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     @media (max-width: 700px) {
       #asp-igor-bi-v2 .aspv2-top, #asp-igor-bi-v2 .aspv2-titlebar { align-items: flex-start; }
-      #asp-igor-bi-v2 .aspv2-freeze, #asp-igor-bi-v2 .aspv2-demo { display: none; }
+      #asp-igor-bi-v2 .aspv2-freeze { display: none; }
+      #asp-igor-bi-v2 .aspv2-titlebar { flex-wrap: wrap; }
+      #asp-igor-bi-v2 .aspv2-demo { white-space: normal; }
       #asp-igor-bi-v2 .aspv2-filter-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
       #asp-igor-bi-v2 .aspv2-two { grid-template-columns: 1fr; }
       #asp-igor-bi-v2 .aspv2-conversions, #asp-igor-bi-v2 .aspv2-km-times { grid-template-columns: repeat(2,1fr); }
@@ -1141,8 +1147,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;section class=&quot;aspv2-view&quot; data-view=&quot;activity&quot; data-open=&quot;true&quot;&gt;
       &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фактическая активность квалификатора&lt;/h3&gt;&lt;div class=&quot;aspv2-section-actions&quot;&gt;&lt;span&gt;Нажмите на показатель для списка лидов&lt;/span&gt;&lt;a class=&quot;aspv2-export&quot; data-export=&quot;activity&quot; download href=&quot;#&quot;&gt;Экспорт XLSX&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-kpis&quot;&gt;
-        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Контактов передано для загрузки&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;provided&quot;&gt;84&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;входной реестр контактов&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов создано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;created&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot; id=&quot;aspv2-created-note&quot;&gt;95% от переданных контактов&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Контактов получено&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;provided&quot;&gt;84&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;входной реестр · включая ещё не созданные лиды&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов создано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;created&quot;&gt;80&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot; id=&quot;aspv2-created-note&quot;&gt;95% от полученных контактов&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Уникальных обработано&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;processed&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;COUNT DISTINCT lead_id&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Лидов с попыткой связи&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;attempted&quot;&gt;63&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot; id=&quot;aspv2-attempt-note&quot;&gt;399 попыток всего · 6,3 на охваченный лид&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-kpi&quot;&gt;&lt;div class=&quot;aspv2-kpi-label&quot;&gt;Успешный дозвон&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-value&quot; data-metric=&quot;connected&quot;&gt;58&lt;/div&gt;&lt;div class=&quot;aspv2-kpi-note&quot;&gt;до утверждения классификатора — условно&lt;/div&gt;&lt;/div&gt;
@@ -1164,8 +1170,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;div class=&quot;aspv2-two&quot;&gt;
         &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Активность по дням&lt;/strong&gt;&lt;span&gt;переход: период → день → лиды&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-bars&quot; id=&quot;aspv2-activity-bars&quot;&gt;&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Контроль SLA и качества&lt;/strong&gt;&lt;span&gt;на момент закрытия&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
-          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Первая попытка ≤ 2 рабочих часов&lt;/span&gt;&lt;b class=&quot;aspv2-ok&quot;&gt;72%&lt;/b&gt;&lt;/div&gt;
-          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Передача КМ ≤ 30 минут&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;50%&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Первая попытка ≤ 2 рабочих часов&lt;/span&gt;&lt;b class=&quot;aspv2-ok&quot; id=&quot;aspv2-sla-first&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Передача КМ ≤ 30 минут&lt;/span&gt;&lt;b id=&quot;aspv2-sla-handoff&quot;&gt;&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;«Нет ответа»: 3 попытки / 3 рабочих дня&lt;/span&gt;&lt;b&gt;обязательное правило&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;История и детализация&lt;/span&gt;&lt;b&gt;36 месяцев&lt;/b&gt;&lt;/div&gt;
         &lt;/div&gt;&lt;div class=&quot;aspv2-callout&quot;&gt;События активности считаются отдельно от остатков по стадиям.&lt;/div&gt;&lt;/div&gt;
@@ -1175,7 +1181,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;section class=&quot;aspv2-view&quot; data-view=&quot;state&quot; data-open=&quot;false&quot;&gt;
       &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Фиксированное состояние лидов&lt;/h3&gt;&lt;div class=&quot;aspv2-section-actions&quot;&gt;&lt;span&gt;Один лид — одно состояние на конец периода&lt;/span&gt;&lt;a class=&quot;aspv2-export&quot; data-export=&quot;state&quot; download href=&quot;#&quot;&gt;Экспорт XLSX&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-two&quot;&gt;
-        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Состояние на дату «до», 21:00 МСК&lt;/strong&gt;&lt;span id=&quot;aspv2-state-total&quot;&gt;80 уникальных лидов&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-state-groups&quot; id=&quot;aspv2-state-groups&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong id=&quot;aspv2-state-asof&quot;&gt;Состояние на последний закрытый снимок&lt;/strong&gt;&lt;span id=&quot;aspv2-state-total&quot;&gt;80 уникальных лидов&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-state-groups&quot; id=&quot;aspv2-state-groups&quot;&gt;&lt;/div&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Контрольная сверка&lt;/strong&gt;&lt;span&gt;защита от двойного счёта&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Активность&lt;/span&gt;&lt;b&gt;сумма событий&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Состояние&lt;/span&gt;&lt;b&gt;последний снимок&lt;/b&gt;&lt;/div&gt;
@@ -1196,6 +1202,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Находится в работе&lt;/small&gt;&lt;b data-metric=&quot;inProgress&quot;&gt;2&lt;/b&gt;&lt;span&gt;открытые обращения КМ&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Создано заказов&lt;/small&gt;&lt;b data-metric=&quot;orders&quot;&gt;2&lt;/b&gt;&lt;span&gt;из переданной когорты&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Создано сделок&lt;/small&gt;&lt;b data-metric=&quot;deals&quot;&gt;1&lt;/b&gt;&lt;span&gt;сквозная связь до сделки&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;aspv2-step&quot;&gt;&lt;small&gt;Провалено&lt;/small&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;failures&quot;&gt;1&lt;/b&gt;&lt;span&gt;уникальные лиды с провалом после передачи КМ&lt;/span&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;aspv2-km-times&quot;&gt;
         &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;avgAccept&quot;&gt;56&lt;/b&gt;&lt;span&gt;Среднее время принятия, минут&lt;/span&gt;&lt;/div&gt;
@@ -1208,17 +1215,18 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;dealRate&quot;&gt;25%&lt;/b&gt;&lt;span&gt;Переданный лид → сделка&lt;/span&gt;&lt;/div&gt;
         &lt;div class=&quot;aspv2-conversion&quot;&gt;&lt;b data-metric=&quot;failRate&quot;&gt;25%&lt;/b&gt;&lt;span&gt;Провалы после передачи / переданные КМ&lt;/span&gt;&lt;/div&gt;
       &lt;/div&gt;
-      &lt;div class=&quot;aspv2-panel&quot; style=&quot;margin-top:10px&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Результаты в разрезе КМ&lt;/strong&gt;&lt;span&gt;фильтр КМ применяется к этому блоку и связанной когорте&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;КМ&lt;/th&gt;&lt;th&gt;Передано&lt;/th&gt;&lt;th&gt;Не принято&lt;/th&gt;&lt;th&gt;Принято вовремя&lt;/th&gt;&lt;th&gt;С нарушением&lt;/th&gt;&lt;th&gt;В работе&lt;/th&gt;&lt;th&gt;Заказы&lt;/th&gt;&lt;th&gt;Сделки&lt;/th&gt;&lt;th&gt;Провалы&lt;/th&gt;&lt;th&gt;Среднее принятия&lt;/th&gt;&lt;th&gt;Медиана принятия&lt;/th&gt;&lt;th&gt;До первого действия&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-km-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-panel&quot; style=&quot;margin-top:10px&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Результаты в разрезе КМ&lt;/strong&gt;&lt;span&gt;каждое число раскрывается с учётом выбранного КМ&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;КМ&lt;/th&gt;&lt;th&gt;Передано&lt;/th&gt;&lt;th&gt;Не принято&lt;/th&gt;&lt;th&gt;Принято вовремя&lt;/th&gt;&lt;th&gt;С нарушением&lt;/th&gt;&lt;th&gt;В работе&lt;/th&gt;&lt;th&gt;Заказы&lt;/th&gt;&lt;th&gt;Сделки&lt;/th&gt;&lt;th&gt;Провалено&lt;/th&gt;&lt;th&gt;Среднее принятия&lt;/th&gt;&lt;th&gt;Медиана принятия&lt;/th&gt;&lt;th&gt;До первого действия&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-km-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;/section&gt;
 
     &lt;section class=&quot;aspv2-view&quot; data-view=&quot;detail&quot; data-open=&quot;false&quot;&gt;
       &lt;div class=&quot;aspv2-section-title&quot;&gt;&lt;h3&gt;Детализация и контроль данных&lt;/h3&gt;&lt;div class=&quot;aspv2-section-actions&quot;&gt;&lt;span&gt;период → день → карточка лида&lt;/span&gt;&lt;a class=&quot;aspv2-export&quot; data-export=&quot;detail&quot; download href=&quot;#&quot;&gt;Экспорт XLSX&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class=&quot;aspv2-drill-banner&quot; id=&quot;aspv2-drill-banner&quot; data-open=&quot;false&quot;&gt;&lt;span id=&quot;aspv2-drill-text&quot;&gt;&lt;/span&gt;&lt;button type=&quot;button&quot; id=&quot;aspv2-drill-reset&quot;&gt;Сбросить раскрытие&lt;/button&gt;&lt;/div&gt;
+      &lt;div class=&quot;aspv2-drill-banner&quot; id=&quot;aspv2-drill-banner&quot; data-open=&quot;false&quot; aria-live=&quot;polite&quot;&gt;&lt;span id=&quot;aspv2-drill-text&quot;&gt;&lt;/span&gt;&lt;div&gt;&lt;button type=&quot;button&quot; id=&quot;aspv2-drill-back&quot;&gt;Вернуться к обзору&lt;/button&gt;&lt;button type=&quot;button&quot; id=&quot;aspv2-drill-reset&quot;&gt;Сбросить раскрытие&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-detail-tools&quot;&gt;
         &lt;input class=&quot;aspv2-search&quot; id=&quot;aspv2-search&quot; type=&quot;search&quot; placeholder=&quot;Поиск по ID, телефону или компании&quot; aria-label=&quot;Поиск по ID, телефону или компании&quot;&gt;
         &lt;details class=&quot;aspv2-columns&quot;&gt;&lt;summary class=&quot;aspv2-tool&quot;&gt;Отображаемые столбцы&lt;/summary&gt;&lt;div class=&quot;aspv2-column-menu&quot; id=&quot;aspv2-column-menu&quot;&gt;&lt;/div&gt;&lt;/details&gt;
         &lt;button type=&quot;button&quot; class=&quot;aspv2-tool&quot; id=&quot;aspv2-clear-sort&quot;&gt;Сбросить сортировку&lt;/button&gt;
       &lt;/div&gt;
+      &lt;div class=&quot;aspv2-detail-count&quot; id=&quot;aspv2-detail-count&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-table-wrap&quot;&gt;&lt;table id=&quot;aspv2-detail-table&quot;&gt;&lt;thead&gt;&lt;tr id=&quot;aspv2-detail-head&quot;&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;aspv2-detail-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
       &lt;div class=&quot;aspv2-two&quot;&gt;
         &lt;div class=&quot;aspv2-panel&quot;&gt;&lt;div class=&quot;aspv2-panel-head&quot;&gt;&lt;strong&gt;Качество данных&lt;/strong&gt;&lt;span&gt;влияет на доступность фильтров&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;aspv2-rules&quot;&gt;
@@ -1227,8 +1235,8 @@ html&gt;body{padding:0}&lt;/style&gt;
           &lt;div class=&quot;aspv2-rule aspv2-drillable&quot; data-quality=&quot;Без следующего дела&quot;&gt;&lt;span&gt;Лиды без следующего дела&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;noNext&quot;&gt;9&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule aspv2-drillable&quot; data-quality=&quot;Просроченные дела&quot;&gt;&lt;span&gt;Просроченные дела&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;overdue&quot;&gt;6&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule aspv2-drillable&quot; data-quality=&quot;Расхождения итогов&quot;&gt;&lt;span&gt;Расхождения итоговых цифр и детализации&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot; data-metric=&quot;qualityDiff&quot;&gt;2&lt;/b&gt;&lt;/div&gt;
-          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Источник заполнен&lt;/span&gt;&lt;b&gt;202 / 202&lt;/b&gt;&lt;/div&gt;
-          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;База прозвона заполнена&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;0 / 202&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Источник заполнен&lt;/span&gt;&lt;b id=&quot;aspv2-source-complete&quot;&gt;&lt;/b&gt;&lt;/div&gt;
+          &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;База прозвона заполнена&lt;/span&gt;&lt;b id=&quot;aspv2-base-complete&quot;&gt;&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;История первоначального КМ&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;нужен событийный слой&lt;/b&gt;&lt;/div&gt;
           &lt;div class=&quot;aspv2-rule&quot;&gt;&lt;span&gt;Автор перехода стадии&lt;/span&gt;&lt;b class=&quot;aspv2-risk&quot;&gt;не отдаётся стандартной историей&lt;/b&gt;&lt;/div&gt;
         &lt;/div&gt;&lt;/div&gt;
@@ -1241,20 +1249,18 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;/div&gt;
     &lt;/section&gt;
 
-    &lt;footer class=&quot;aspv2-footer&quot;&gt;&lt;span&gt;Факт закрывается ежедневно в 21:00 МСК; после закрытия не изменяется&lt;/span&gt;&lt;span&gt;Источник: Bitrix24 → отдельный аналитический слой → BI Конструктор&lt;/span&gt;&lt;/footer&gt;
+    &lt;footer class=&quot;aspv2-footer&quot;&gt;&lt;span&gt;Демо · редакция 26.08.2026 · примеры за 16.06 · закрытые снимки 01–16.06&lt;/span&gt;&lt;span&gt;Целевая схема: Bitrix24 → аналитический слой → BI Конструктор&lt;/span&gt;&lt;/footer&gt;
+    &lt;dialog class=&quot;aspv2-demo-card&quot; id=&quot;aspv2-demo-card&quot; aria-labelledby=&quot;aspv2-demo-card-title&quot;&gt;&lt;h3 id=&quot;aspv2-demo-card-title&quot;&gt;Демонстрационная карточка&lt;/h3&gt;&lt;div id=&quot;aspv2-demo-card-body&quot;&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;aspv2-tool&quot; id=&quot;aspv2-demo-close&quot;&gt;Закрыть&lt;/button&gt;&lt;/dialog&gt;
   &lt;/main&gt;
 
   &lt;script&gt;
     (() =&gt; {
       const root = document.getElementById(&#x27;asp-igor-bi-v2&#x27;);
       if (!root) return;
-      const base = {
-        provided:84, received:80, created:80, processed:63, attempted:63, calls:399, connected:58, transferred:4,
-        noNext:9, overdue:6, queue:17, median:62, average:93, handoff:38,
-        autoAppeals:4, accepted:3, notAccepted:1, acceptedOnTime:2, lateAccepted:1, inProgress:2,
-        avgAccept:56, medianAccept:42, firstKmAction:68, orders:2, deals:1, failures:1,
-        duplicates:3, technicalContacts:7, qualityDiff:2
-      };
+      // DEMO_MODEL_START: one synthetic register drives counts, drill-down and exports.
+      const demoDate = &#x27;2026-06-16&#x27;;
+      const snapshotDates = Array.from({length:16},(_,i)=&gt;`2026-06-${String(i+1).padStart(2,&#x27;0&#x27;)}`);
+      const stamp = minutes =&gt; `16.06.2026 ${String(Math.floor(minutes/60)).padStart(2,&#x27;0&#x27;)}:${String(minutes%60).padStart(2,&#x27;0&#x27;)}`;
       const statusBase = [
         {label:&#x27;Новый лид&#x27;,value:8,group:&#x27;new&#x27;,groupLabel:&#x27;Новый&#x27;},
         {label:&#x27;Первичный контакт&#x27;,value:31,group:&#x27;work&#x27;,groupLabel:&#x27;В работе&#x27;},
@@ -1266,19 +1272,85 @@ html&gt;body{padding:0}&lt;/style&gt;
         {label:&#x27;Сейчас не актуально&#x27;,value:5,group:&#x27;done&#x27;,groupLabel:&#x27;Завершена квалификация&#x27;},
         {label:&#x27;Передан КМ&#x27;,value:4,group:&#x27;km&#x27;,groupLabel:&#x27;Передано КМ&#x27;}
       ];
-      const kmRows = [
-        [&#x27;КМ 1&#x27;,2,0,1,1,1,1,1,0,&#x27;48 мин&#x27;,&#x27;37 мин&#x27;,&#x27;61 мин&#x27;],
-        [&#x27;КМ 2&#x27;,1,0,1,0,1,1,0,0,&#x27;64 мин&#x27;,&#x27;51 мин&#x27;,&#x27;75 мин&#x27;],
-        [&#x27;КМ 3&#x27;,1,1,0,0,0,0,0,1,&#x27;—&#x27;,&#x27;—&#x27;,&#x27;—&#x27;]
-      ];
-      const details = [
-        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0161&#x27;,leadNumeric:&#x27;161&#x27;,company:&#x27;ООО Альфа&#x27;,phone:&#x27;+7 900 000-01-61&#x27;,createdAt:&#x27;16.06 09:05&#x27;,firstAttemptAt:&#x27;16.06 09:42&#x27;,connectedAt:&#x27;16.06 09:58&#x27;,transferredAt:&#x27;16.06 10:10&#x27;,acceptedAt:&#x27;16.06 10:37&#x27;,qualifier:&#x27;Квалификатор 1&#x27;,km:&#x27;КМ 1&#x27;,source:&#x27;Звонок&#x27;,base:&#x27;Парсинг&#x27;,qualification:&#x27;Целевой&#x27;,appealId:&#x27;A-4012&#x27;,orderId:&#x27;Z-1386&#x27;,dealId:&#x27;2957&#x27;,appealState:&#x27;В работе&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Передан КМ&#x27;,attempts:3,next:&#x27;17.06 10:00&#x27;,quality:[]},
-        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0162&#x27;,leadNumeric:&#x27;162&#x27;,company:&#x27;ООО Вектор&#x27;,phone:&#x27;+7 900 000-01-62&#x27;,createdAt:&#x27;16.06 09:17&#x27;,firstAttemptAt:&#x27;16.06 10:03&#x27;,connectedAt:&#x27;—&#x27;,transferredAt:&#x27;—&#x27;,acceptedAt:&#x27;—&#x27;,qualifier:&#x27;Квалификатор 1&#x27;,km:&#x27;КМ 2&#x27;,source:&#x27;Звонок&#x27;,base:&#x27;Холодная база&#x27;,qualification:&#x27;В работе&#x27;,appealId:&#x27;—&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;—&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Второе касание&#x27;,attempts:2,next:&#x27;17.06 12:00&#x27;,quality:[&#x27;Без следующего дела&#x27;]},
-        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0163&#x27;,leadNumeric:&#x27;163&#x27;,company:&#x27;Личный контакт&#x27;,phone:&#x27;+7 900 000-01-63&#x27;,createdAt:&#x27;16.06 10:12&#x27;,firstAttemptAt:&#x27;16.06 10:20&#x27;,connectedAt:&#x27;16.06 10:21&#x27;,transferredAt:&#x27;—&#x27;,acceptedAt:&#x27;—&#x27;,qualifier:&#x27;Квалификатор 2&#x27;,km:&#x27;КМ 3&#x27;,source:&#x27;Ручное создание&#x27;,base:&#x27;Справочник&#x27;,qualification:&#x27;Нецелевой&#x27;,appealId:&#x27;—&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;—&#x27;,failureReason:&#x27;Технический / личный контакт&#x27;,state:&#x27;Нецелевой&#x27;,attempts:1,next:&#x27;—&#x27;,quality:[&#x27;Технические и личные контакты&#x27;,&#x27;Без следующего дела&#x27;]},
-        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0164&#x27;,leadNumeric:&#x27;164&#x27;,company:&#x27;АО Транзит&#x27;,phone:&#x27;+7 900 000-01-64&#x27;,createdAt:&#x27;16.06 11:06&#x27;,firstAttemptAt:&#x27;16.06 13:18&#x27;,connectedAt:&#x27;16.06 13:30&#x27;,transferredAt:&#x27;—&#x27;,acceptedAt:&#x27;—&#x27;,qualifier:&#x27;Квалификатор 2&#x27;,km:&#x27;КМ 1&#x27;,source:&#x27;Рекомендация&#x27;,base:&#x27;Конкурент А&#x27;,qualification:&#x27;Перезвонить&#x27;,appealId:&#x27;—&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;—&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Просили перезвонить&#x27;,attempts:2,next:&#x27;18.06 09:00&#x27;,quality:[&#x27;Просроченные дела&#x27;]},
-        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0165&#x27;,leadNumeric:&#x27;165&#x27;,company:&#x27;ООО Север&#x27;,phone:&#x27;+7 900 000-01-65&#x27;,createdAt:&#x27;16.06 12:25&#x27;,firstAttemptAt:&#x27;—&#x27;,connectedAt:&#x27;—&#x27;,transferredAt:&#x27;—&#x27;,acceptedAt:&#x27;—&#x27;,qualifier:&#x27;Квалификатор 1&#x27;,km:&#x27;КМ 2&#x27;,source:&#x27;Веб-форма&#x27;,base:&#x27;Парсинг&#x27;,qualification:&#x27;Не начата&#x27;,appealId:&#x27;—&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;—&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Новый лид&#x27;,attempts:0,next:&#x27;—&#x27;,quality:[&#x27;Дубли&#x27;,&#x27;Без следующего дела&#x27;,&#x27;Расхождения итогов&#x27;]},
-        {snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;L-0166&#x27;,leadNumeric:&#x27;166&#x27;,company:&#x27;ИП Горизонт&#x27;,phone:&#x27;+7 900 000-01-66&#x27;,createdAt:&#x27;16.06 13:40&#x27;,firstAttemptAt:&#x27;16.06 14:00&#x27;,connectedAt:&#x27;16.06 14:09&#x27;,transferredAt:&#x27;16.06 14:20&#x27;,acceptedAt:&#x27;16.06 15:44&#x27;,qualifier:&#x27;Квалификатор 1&#x27;,km:&#x27;КМ 2&#x27;,source:&#x27;Звонок&#x27;,base:&#x27;Парсинг&#x27;,qualification:&#x27;Целевой&#x27;,appealId:&#x27;A-4015&#x27;,orderId:&#x27;—&#x27;,dealId:&#x27;—&#x27;,appealState:&#x27;Принято с нарушением&#x27;,failureReason:&#x27;—&#x27;,state:&#x27;Передан КМ&#x27;,attempts:4,next:&#x27;17.06 09:30&#x27;,quality:[&#x27;Просроченные дела&#x27;]}
-      ];
+      const states = statusBase.flatMap(state=&gt;Array(state.value).fill(state));
+      const details = states.map((stage,i)=&gt;{
+        const attempted = i&gt;=17;
+        const connected = attempted &amp;&amp; stage.label!==&#x27;Нет ответа&#x27;;
+        const transferred = stage.group===&#x27;km&#x27;;
+        const kmIndex = i-76;
+        const accepted = transferred &amp;&amp; kmIndex&lt;3;
+        const failed = transferred &amp;&amp; kmIndex===3;
+        const createdMinute = 9*60+i*2;
+        const firstContactMinutes = 35+(i%8)*9;
+        const handoffMinutes = 20+(i%4)*5;
+        const acceptMinutes = accepted ? [27,42,84][kmIndex] : null;
+        const firstKmMinutes = accepted ? acceptMinutes+5 : null;
+        const transferMinute = createdMinute+firstContactMinutes+10+handoffMinutes;
+        const quality = [];
+        if (i&lt;3) quality.push(&#x27;Дубли&#x27;);
+        if (i&gt;=56 &amp;&amp; i&lt;63) quality.push(&#x27;Технические и личные контакты&#x27;);
+        if (i&lt;9) quality.push(&#x27;Без следующего дела&#x27;);
+        if (i&gt;=9 &amp;&amp; i&lt;15) quality.push(&#x27;Просроченные дела&#x27;);
+        return {
+          recordId:`C-${String(i+1).padStart(3,&#x27;0&#x27;)}`,date:demoDate,snapshot:&#x27;16.06.2026&#x27;,
+          leadId:`DEMO-L-${String(i+1).padStart(3,&#x27;0&#x27;)}`,company:`Демо-компания ${i+1}`,phone:`Демо-телефон ${String(i+1).padStart(3,&#x27;0&#x27;)}`,
+          createdAt:stamp(createdMinute),firstAttemptAt:attempted?stamp(createdMinute+firstContactMinutes):&#x27;—&#x27;,
+          connectedAt:connected?stamp(createdMinute+firstContactMinutes+10):&#x27;—&#x27;,transferredAt:transferred?stamp(transferMinute):&#x27;—&#x27;,
+          acceptedAt:accepted?stamp(transferMinute+acceptMinutes):&#x27;—&#x27;,qualifier:`Квалификатор ${i%3===0?2:1}`,
+          km:transferred?[&#x27;КМ 1&#x27;,&#x27;КМ 2&#x27;,&#x27;КМ 1&#x27;,&#x27;КМ 3&#x27;][kmIndex]:&#x27;—&#x27;,
+          source:[&#x27;Звонок&#x27;,&#x27;Веб-форма&#x27;,&#x27;Рекомендация&#x27;,&#x27;Ручное создание&#x27;][i%4],base:[&#x27;Парсинг&#x27;,&#x27;Холодная база&#x27;,&#x27;Справочник&#x27;,&#x27;Конкурент А&#x27;][Math.floor(i/4)%4],
+          qualification:transferred?&#x27;Целевой&#x27;:stage.group===&#x27;new&#x27;?&#x27;Не начата&#x27;:stage.group===&#x27;done&#x27;?stage.label:&#x27;В работе&#x27;,
+          appealId:transferred?`DEMO-A-${kmIndex+1}`:&#x27;—&#x27;,orderId:transferred&amp;&amp;kmIndex&lt;2?`DEMO-Z-${kmIndex+1}`:&#x27;—&#x27;,
+          dealId:transferred&amp;&amp;kmIndex===0?&#x27;DEMO-D-1&#x27;:&#x27;—&#x27;,
+          appealState:failed?&#x27;Провалено&#x27;:transferred?(kmIndex===0?&#x27;Сделка закрыта&#x27;:&#x27;В работе&#x27;):&#x27;—&#x27;,
+          failureReason:failed?&#x27;Клиент выбрал другого партнёра&#x27;:&#x27;—&#x27;,state:stage.label,
+          attempts:attempted?6+(i&lt;38?1:0):0,next:i&lt;9?&#x27;—&#x27;:i&lt;15?&#x27;16.06.2026 18:00&#x27;:stage.group===&#x27;done&#x27;||failed||kmIndex===0?&#x27;—&#x27;:&#x27;17.06.2026 10:00&#x27;,
+          quality,attempted,connected,transferred,accepted,failed,
+          firstContactMinutes:attempted?firstContactMinutes:null,handoffMinutes:transferred?handoffMinutes:null,
+          acceptMinutes,firstKmMinutes,lateAccepted:accepted&amp;&amp;acceptMinutes&gt;60,
+          inProgress:accepted&amp;&amp;kmIndex&gt;0,created:true
+        };
+      });
+      const contacts = [...details,...Array.from({length:4},(_,i)=&gt;({
+        recordId:`C-${81+i}`,date:demoDate,snapshot:&#x27;16.06.2026&#x27;,leadId:&#x27;Не создан&#x27;,company:`Демо-контакт ${81+i}`,phone:`Демо-телефон ${81+i}`,
+        qualifier:`Квалификатор ${i%2+1}`,km:&#x27;—&#x27;,source:&#x27;Звонок&#x27;,base:&#x27;Парсинг&#x27;,state:&#x27;Ожидает загрузки&#x27;,qualification:&#x27;Не начата&#x27;,quality:[],created:false
+      }))];
+      const metricPredicates = {
+        provided:()=&gt;true,created:r=&gt;r.created,processed:r=&gt;r.attempted,attempted:r=&gt;r.attempted,
+        connected:r=&gt;r.connected,transferred:r=&gt;r.transferred,autoAppeals:r=&gt;r.transferred,accepted:r=&gt;r.accepted,
+        notAccepted:r=&gt;r.transferred&amp;&amp;!r.accepted,acceptedOnTime:r=&gt;r.accepted&amp;&amp;!r.lateAccepted,lateAccepted:r=&gt;r.lateAccepted,
+        inProgress:r=&gt;r.inProgress,orders:r=&gt;r.created&amp;&amp;r.orderId!==&#x27;—&#x27;,deals:r=&gt;r.created&amp;&amp;r.dealId!==&#x27;—&#x27;,
+        failures:r=&gt;r.transferred&amp;&amp;r.failed,queue:r=&gt;r.created&amp;&amp;!r.attempted,
+        noNext:r=&gt;r.quality.includes(&#x27;Без следующего дела&#x27;),overdue:r=&gt;r.quality.includes(&#x27;Просроченные дела&#x27;),
+        duplicates:r=&gt;r.quality.includes(&#x27;Дубли&#x27;),technicalContacts:r=&gt;r.quality.includes(&#x27;Технические и личные контакты&#x27;),qualityDiff:()=&gt;false,
+        median:r=&gt;r.attempted,average:r=&gt;r.attempted,handoff:r=&gt;r.transferred,
+        avgAccept:r=&gt;r.accepted,medianAccept:r=&gt;r.accepted,firstKmAction:r=&gt;r.accepted
+      };
+      const metricAliases = {processingCoverage:&#x27;processed&#x27;,callCoverage:&#x27;attempted&#x27;,reachRate:&#x27;connected&#x27;,transferRate:&#x27;transferred&#x27;,acceptanceRate:&#x27;accepted&#x27;,orderRate:&#x27;orders&#x27;,dealRate:&#x27;deals&#x27;,failRate:&#x27;failures&#x27;};
+      const uniqueRows = rows =&gt; [...new Map(rows.map(row=&gt;[row.recordId,row])).values()];
+      const average = values =&gt; values.length?Math.round(values.reduce((a,b)=&gt;a+b,0)/values.length):&#x27;—&#x27;;
+      const median = values =&gt; { const sorted=[...values].sort((a,b)=&gt;a-b); const n=sorted.length; return n?Math.round((sorted[Math.floor((n-1)/2)]+sorted[Math.floor(n/2)])/2):&#x27;—&#x27;; };
+      function selectRecords(filters,includeUncreated=false) {
+        return uniqueRows((includeUncreated?contacts:details).filter(row=&gt;row.date&gt;=filters.from&amp;&amp;row.date&lt;=filters.to&amp;&amp;snapshotDates.includes(row.date)&amp;&amp;
+          (filters.qualifier===&#x27;Все квалификаторы&#x27;||row.qualifier===filters.qualifier)&amp;&amp;
+          (filters.km===&#x27;Все КМ&#x27;||row.km===filters.km)&amp;&amp;
+          (filters.source===&#x27;Все источники&#x27;||row.source===filters.source)&amp;&amp;
+          (filters.base===&#x27;Все базы&#x27;||row.base===filters.base)));
+      }
+      function metricRows(key,filters) {
+        const name=metricAliases[key]||key;
+        return selectRecords(filters,name===&#x27;provided&#x27;).filter(metricPredicates[name]||(()=&gt;false));
+      }
+      function calculateMetrics(filters) {
+        const values=Object.fromEntries(Object.keys(metricPredicates).map(key=&gt;[key,metricRows(key,filters).length]));
+        const rows=selectRecords(filters);
+        values.calls=rows.reduce((sum,row)=&gt;sum+row.attempts,0);
+        for (const [key,field,fn] of [[&#x27;median&#x27;,&#x27;firstContactMinutes&#x27;,median],[&#x27;average&#x27;,&#x27;firstContactMinutes&#x27;,average],[&#x27;handoff&#x27;,&#x27;handoffMinutes&#x27;,average],[&#x27;avgAccept&#x27;,&#x27;acceptMinutes&#x27;,average],[&#x27;medianAccept&#x27;,&#x27;acceptMinutes&#x27;,median],[&#x27;firstKmAction&#x27;,&#x27;firstKmMinutes&#x27;,average]]) values[key]=fn(rows.map(row=&gt;row[field]).filter(value=&gt;value!==null));
+        for (const [key,numerator] of Object.entries(metricAliases)) values[key]=percentage(values[numerator],[&#x27;acceptanceRate&#x27;,&#x27;orderRate&#x27;,&#x27;dealRate&#x27;,&#x27;failRate&#x27;].includes(key)?values.transferred:values.created);
+        return values;
+      }
+      function percentage(value,total) { return total?`${Math.round(value/total*100)}%`:&#x27;—&#x27;; }
+      // DEMO_MODEL_END
       const detailColumns = [
         [&#x27;snapshot&#x27;,&#x27;Дата снимка&#x27;],[&#x27;leadId&#x27;,&#x27;ID лида&#x27;],[&#x27;company&#x27;,&#x27;Компания&#x27;],[&#x27;phone&#x27;,&#x27;Телефон&#x27;],
         [&#x27;createdAt&#x27;,&#x27;Создан&#x27;],[&#x27;firstAttemptAt&#x27;,&#x27;Первая попытка&#x27;],[&#x27;connectedAt&#x27;,&#x27;Успешный дозвон&#x27;],
@@ -1299,43 +1371,32 @@ html&gt;body{padding:0}&lt;/style&gt;
       let activeDrill = null;
       let activeState = null;
       let activeQuality = null;
+      let activeMetric = null;
+      let activeKm = null;
+      let activeDay = null;
+      let activeTab = &#x27;activity&#x27;;
+      let returnTab = &#x27;activity&#x27;;
+      let appliedFilters;
       let currentStatusRows = [];
       let currentDetailRows = [];
+      let currentKmRows = [];
+      let currentMetrics = {};
       const fmt = d =&gt; new Intl.DateTimeFormat(&#x27;ru-RU&#x27;,{day:&#x27;numeric&#x27;,month:&#x27;short&#x27;,year:&#x27;numeric&#x27;}).format(new Date(`${d}T12:00:00`));
       const days = () =&gt; Math.max(1, Math.round((new Date(els.to.value) - new Date(els.from.value))/86400000)+1);
-      const factor = () =&gt; {
-        let f = Math.min(4, Math.sqrt(days()));
-        if (els.qualifier.selectedIndex &gt; 0) f *= .52;
-        if (els.km.selectedIndex &gt; 0) f *= .34;
-        if (els.source.selectedIndex &gt; 0 &amp;&amp; els.source.value !== &#x27;Звонок&#x27;) f *= .22;
-        if (els.base.selectedIndex &gt; 0) f *= .31;
-        return f;
-      };
-      const metricValue = (key, f) =&gt; {
-        if ([&#x27;median&#x27;,&#x27;average&#x27;,&#x27;handoff&#x27;,&#x27;avgAccept&#x27;,&#x27;medianAccept&#x27;,&#x27;firstKmAction&#x27;].includes(key)) return Math.round(base[key] * (1 + (f-1)*.04));
-        return Math.max(key === &#x27;deals&#x27; || key === &#x27;failures&#x27; ? 0 : 1, Math.round(base[key]*f));
-      };
       const escapeHtml = value =&gt; String(value).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g,char=&gt;({&#x27;&amp;&#x27;:&#x27;&amp;amp;&#x27;,&#x27;&lt;&#x27;:&#x27;&amp;lt;&#x27;,&#x27;&gt;&#x27;:&#x27;&amp;gt;&#x27;,&#x27;&quot;&#x27;:&#x27;&amp;quot;&#x27;,&quot;&#x27;&quot;:&#x27;&amp;#39;&#x27;}[char]));
       function bars(target, rows) {
         const max = Math.max(1,...rows.map(r=&gt;r[1]));
-        target.innerHTML = rows.map(([label,value]) =&gt; `&lt;button type=&quot;button&quot; class=&quot;aspv2-bar aspv2-drillable&quot; data-bar-label=&quot;${escapeHtml(label)}&quot;&gt;&lt;span class=&quot;aspv2-bar-label&quot; title=&quot;${escapeHtml(label)}&quot;&gt;${escapeHtml(label)}&lt;/span&gt;&lt;span class=&quot;aspv2-track&quot;&gt;&lt;span class=&quot;aspv2-fill&quot; style=&quot;display:block;width:${Math.round(value/max*100)}%&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;aspv2-bar-value&quot;&gt;${value}&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;);
-        target.querySelectorAll(&#x27;[data-bar-label]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;openDetail(`День: ${button.dataset.barLabel}`)));
+        target.innerHTML = rows.map(([label,value,date]) =&gt; `&lt;button type=&quot;button&quot; class=&quot;aspv2-bar aspv2-drillable&quot; data-bar-label=&quot;${escapeHtml(label)}&quot; data-day=&quot;${date}&quot;&gt;&lt;span class=&quot;aspv2-bar-label&quot;&gt;${escapeHtml(label)}&lt;/span&gt;&lt;span class=&quot;aspv2-track&quot;&gt;&lt;span class=&quot;aspv2-fill&quot; style=&quot;display:block;width:${Math.round(value/max*100)}%&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;aspv2-bar-value&quot;&gt;${value}&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;);
+        target.querySelectorAll(&#x27;[data-bar-label]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;openDetail(`Обработано за ${button.dataset.barLabel}`,{metric:&#x27;processed&#x27;,day:button.dataset.day})));
       }
       function switchTab(name) {
+        activeTab=name;
         root.querySelectorAll(&#x27;[data-tab]&#x27;).forEach(button=&gt;button.setAttribute(&#x27;aria-pressed&#x27;,String(button.dataset.tab===name)));
         root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(view=&gt;view.dataset.open=String(view.dataset.view===name));
       }
-      function scaleStatuses(total) {
-        const rows = statusBase.map(item=&gt;{
-          const raw = item.value/base.created*total;
-          return {...item,value:Math.floor(raw),fraction:raw-Math.floor(raw)};
-        });
-        let remainder = total-rows.reduce((sum,row)=&gt;sum+row.value,0);
-        [...rows].sort((a,b)=&gt;b.fraction-a.fraction).forEach(row=&gt;{ if (remainder&gt;0) { row.value+=1; remainder-=1; } });
-        return rows;
-      }
       function renderStates(total) {
-        currentStatusRows = scaleStatuses(total);
+        const rows=selectRecords(appliedFilters);
+        currentStatusRows = statusBase.map(stage=&gt;({...stage,value:rows.filter(row=&gt;row.state===stage.label).length}));
         const max = Math.max(1,...currentStatusRows.map(row=&gt;row.value));
         const pct1 = value =&gt; total ? `${(value/total*100).toFixed(1).replace(&#x27;.&#x27;,&#x27;,&#x27;)}%` : &#x27;—&#x27;;
         const groups = [&#x27;new&#x27;,&#x27;work&#x27;,&#x27;done&#x27;,&#x27;km&#x27;];
@@ -1361,15 +1422,13 @@ html&gt;body{padding:0}&lt;/style&gt;
           renderDetails();
         }));
       }
+      function drillRows() {
+        const rows=activeMetric?metricRows(activeMetric,appliedFilters):selectRecords(appliedFilters);
+        return rows.filter(row=&gt;(!activeState||row.state===activeState)&amp;&amp;(!activeQuality||row.quality.includes(activeQuality))&amp;&amp;(!activeKm||row.km===activeKm)&amp;&amp;(!activeDay||row.date===activeDay));
+      }
       function filteredDetails() {
         const query = els.search.value.trim().toLowerCase();
-        const rows = details.filter(row =&gt;
-          (els.qualifier.value === &#x27;Все квалификаторы&#x27; || row.qualifier === els.qualifier.value) &amp;&amp;
-          (els.km.value === &#x27;Все КМ&#x27; || row.km === els.km.value) &amp;&amp;
-          (els.source.value === &#x27;Все источники&#x27; || row.source === els.source.value) &amp;&amp;
-          (els.base.value === &#x27;Все базы&#x27; || row.base === els.base.value) &amp;&amp;
-          (!activeState || row.state === activeState) &amp;&amp;
-          (!activeQuality || row.quality.includes(activeQuality)) &amp;&amp;
+        const rows = drillRows().filter(row =&gt;
           (!query || [row.leadId,row.phone,row.company].some(value=&gt;String(value).toLowerCase().includes(query)))
         );
         if (sortKey) rows.sort((a,b)=&gt;String(a[sortKey]).localeCompare(String(b[sortKey]),&#x27;ru&#x27;,{numeric:true})*sortDirection);
@@ -1377,39 +1436,56 @@ html&gt;body{padding:0}&lt;/style&gt;
       }
       function detailCell(row,key) {
         const value = row[key] ?? &#x27;—&#x27;;
-        if (key===&#x27;leadId&#x27;) return `&lt;a href=&quot;https://asplogistic.bitrix24.ru/crm/lead/details/${encodeURIComponent(row.leadNumeric)}/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;${escapeHtml(value)}&lt;/a&gt;`;
+        if ([&#x27;leadId&#x27;,&#x27;appealId&#x27;,&#x27;orderId&#x27;,&#x27;dealId&#x27;].includes(key)&amp;&amp;row.created&amp;&amp;value!==&#x27;—&#x27;) return `&lt;button class=&quot;aspv2-cell-button&quot; type=&quot;button&quot; data-demo-record=&quot;${row.recordId}&quot;&gt;${escapeHtml(value)}&lt;/button&gt;`;
         return escapeHtml(value);
       }
       function renderDetails() {
         const columns = detailColumns.filter(([key])=&gt;visibleColumns.has(key));
         root.querySelector(&#x27;#aspv2-detail-head&#x27;).innerHTML = columns.map(([key,label])=&gt;`&lt;th&gt;&lt;button type=&quot;button&quot; data-sort=&quot;${key}&quot;&gt;${escapeHtml(label)}${sortKey===key ? (sortDirection===1?&#x27; ↑&#x27;:&#x27; ↓&#x27;) : &#x27;&#x27;}&lt;/button&gt;&lt;/th&gt;`).join(&#x27;&#x27;);
         currentDetailRows = filteredDetails();
+        const selectedCount=drillRows().length;
+        root.querySelector(&#x27;#aspv2-detail-count&#x27;).textContent=`Строк: ${currentDetailRows.length} из ${selectedCount} в отборе · XLSX выгружает показанный список${activeMetric===&#x27;provided&#x27;?&#x27; · контакты без лида помечены «Не создан»&#x27;:&#x27;&#x27;}`;
+        if (activeDrill) root.querySelector(&#x27;#aspv2-drill-text&#x27;).textContent=`${activeDrill} · ${appliedFilters.from} — ${appliedFilters.to} · ${activeKm||appliedFilters.km} · ${appliedFilters.qualifier} · ${appliedFilters.source} · ${appliedFilters.base} · Записей: ${selectedCount}`;
         root.querySelector(&#x27;#aspv2-detail-rows&#x27;).innerHTML = currentDetailRows.length ? currentDetailRows.map(row=&gt;`&lt;tr&gt;${columns.map(([key])=&gt;`&lt;td&gt;${detailCell(row,key)}&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;) : `&lt;tr&gt;&lt;td colspan=&quot;${columns.length}&quot;&gt;Нет строк для выбранного сочетания фильтров&lt;/td&gt;&lt;/tr&gt;`;
         root.querySelectorAll(&#x27;[data-sort]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;{
           if (sortKey===button.dataset.sort) sortDirection*=-1; else { sortKey=button.dataset.sort; sortDirection=1; }
           renderDetails();
         }));
+        root.querySelectorAll(&#x27;[data-demo-record]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;{
+          const row=details.find(item=&gt;item.recordId===button.dataset.demoRecord);
+          root.querySelector(&#x27;#aspv2-demo-card-body&#x27;).innerHTML=`&lt;p&gt;${escapeHtml(row.leadId)} · ${escapeHtml(row.company)}&lt;/p&gt;&lt;p&gt;КМ: ${escapeHtml(row.km)} · ${escapeHtml(row.appealState)}&lt;/p&gt;&lt;p&gt;Причина провала: ${escapeHtml(row.failureReason)}&lt;/p&gt;&lt;p&gt;Связи: ${[row.appealId,row.orderId,row.dealId].map(escapeHtml).join(&#x27; → &#x27;)}&lt;/p&gt;&lt;p&gt;Это вымышленный пример. Переход в рабочую CRM отключён; в итоговом BI используются реальные ID и ссылки Битрикс24.&lt;/p&gt;`;
+          root.querySelector(&#x27;#aspv2-demo-card&#x27;).showModal();
+        }));
         if (currentStatusRows.length) refreshExportLinks();
       }
-      function renderTables(f) {
-        const selectedKm = els.km.value;
-        const filteredKm = kmRows.filter(r =&gt; selectedKm === &#x27;Все КМ&#x27; || r[0] === selectedKm);
-        root.querySelector(&#x27;#aspv2-km-rows&#x27;).innerHTML = filteredKm.map(r=&gt;`&lt;tr class=&quot;aspv2-drillable&quot; data-km-row=&quot;${escapeHtml(r[0])}&quot;&gt;${r.map(c=&gt;`&lt;td&gt;${c}&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;);
-        root.querySelectorAll(&#x27;[data-km-row]&#x27;).forEach(row=&gt;row.addEventListener(&#x27;click&#x27;,()=&gt;openDetail(`Клиентский менеджер: ${row.dataset.kmRow}`)));
+      const kmColumns=[&#x27;transferred&#x27;,&#x27;notAccepted&#x27;,&#x27;acceptedOnTime&#x27;,&#x27;lateAccepted&#x27;,&#x27;inProgress&#x27;,&#x27;orders&#x27;,&#x27;deals&#x27;,&#x27;failures&#x27;,&#x27;avgAccept&#x27;,&#x27;medianAccept&#x27;,&#x27;firstKmAction&#x27;];
+      const kmLabels=[&#x27;Передано&#x27;,&#x27;Не принято&#x27;,&#x27;Принято вовремя&#x27;,&#x27;С нарушением&#x27;,&#x27;В работе&#x27;,&#x27;Заказы&#x27;,&#x27;Сделки&#x27;,&#x27;Провалено&#x27;,&#x27;Среднее принятия&#x27;,&#x27;Медиана принятия&#x27;,&#x27;До первого действия&#x27;];
+      function renderTables() {
+        currentKmRows=[&#x27;КМ 1&#x27;,&#x27;КМ 2&#x27;,&#x27;КМ 3&#x27;].filter(km=&gt;appliedFilters.km===&#x27;Все КМ&#x27;||appliedFilters.km===km).map(km=&gt;{
+          const metrics=calculateMetrics({...appliedFilters,km});
+          return [km,...kmColumns.map(key=&gt;metrics[key])];
+        });
+        root.querySelector(&#x27;#aspv2-km-rows&#x27;).innerHTML = currentKmRows.map(r=&gt;`&lt;tr&gt;&lt;td&gt;&lt;button class=&quot;aspv2-cell-button&quot; data-km=&quot;${r[0]}&quot; data-km-metric=&quot;transferred&quot; type=&quot;button&quot;&gt;${r[0]}&lt;/button&gt;&lt;/td&gt;${r.slice(1).map((value,index)=&gt;`&lt;td&gt;&lt;button class=&quot;aspv2-cell-button&quot; data-km=&quot;${r[0]}&quot; data-km-metric=&quot;${kmColumns[index]}&quot; type=&quot;button&quot; aria-label=&quot;${r[0]}: ${kmLabels[index]} — ${value}&quot;&gt;${value}${index&gt;=8&amp;&amp;value!==&#x27;—&#x27;?&#x27; мин&#x27;:&#x27;&#x27;}&lt;/button&gt;&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;/tr&gt;`).join(&#x27;&#x27;);
+        root.querySelectorAll(&#x27;[data-km-metric]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;openDetail(`${button.dataset.km}: ${kmLabels[kmColumns.indexOf(button.dataset.kmMetric)]}`,{km:button.dataset.km,metric:button.dataset.kmMetric})));
         renderDetails();
       }
       function openDetail(label,options={}) {
+        if (activeTab!==&#x27;detail&#x27;) returnTab=activeTab;
         activeDrill=label;
         activeState=options.state || null;
         activeQuality=options.quality || null;
+        activeMetric=options.metric || null;
+        activeKm=options.km || null;
+        activeDay=options.day || null;
         els.search.value=&#x27;&#x27;;
         root.querySelector(&#x27;#aspv2-drill-text&#x27;).textContent=`Раскрытие показателя: ${label}`;
         root.querySelector(&#x27;#aspv2-drill-banner&#x27;).dataset.open=&#x27;true&#x27;;
+        root.querySelector(&#x27;#aspv2-drill-back&#x27;).textContent=`← ${returnTab===&#x27;state&#x27;?&#x27;К состояниям лидов&#x27;:returnTab===&#x27;km&#x27;?&#x27;К эффективности КМ&#x27;:&#x27;К активности квалификатора&#x27;}`;
         switchTab(&#x27;detail&#x27;);
         renderDetails();
       }
       function resetDrill() {
-        activeDrill=activeState=activeQuality=null;
+        activeDrill=activeState=activeQuality=activeMetric=activeKm=activeDay=null;
         root.querySelector(&#x27;#aspv2-drill-banner&#x27;).dataset.open=&#x27;false&#x27;;
         renderDetails();
       }
@@ -1452,8 +1528,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       function exportRows(kind) {
         let rows=[];
         if (kind===&#x27;activity&#x27;) rows=[...root.querySelectorAll(&#x27;[data-view=&quot;activity&quot;] .aspv2-kpi&#x27;)].map(card=&gt;({Показатель:card.querySelector(&#x27;.aspv2-kpi-label&#x27;).textContent,Значение:card.querySelector(&#x27;.aspv2-kpi-value&#x27;).textContent}));
-        if (kind===&#x27;state&#x27;) rows=currentStatusRows.map(row=&gt;({Группа:row.groupLabel,Состояние:row.label,Количество:row.value,Доля:`${(row.value/currentStatusRows.reduce((s,r)=&gt;s+r.value,0)*100).toFixed(1)}%`}));
-        if (kind===&#x27;km&#x27;) rows=kmRows.map(row=&gt;Object.fromEntries([&#x27;КМ&#x27;,&#x27;Передано&#x27;,&#x27;Не принято&#x27;,&#x27;Принято вовремя&#x27;,&#x27;С нарушением&#x27;,&#x27;В работе&#x27;,&#x27;Заказы&#x27;,&#x27;Сделки&#x27;,&#x27;Провалы&#x27;,&#x27;Среднее принятия&#x27;,&#x27;Медиана принятия&#x27;,&#x27;До первого действия&#x27;].map((label,i)=&gt;[label,row[i]])));
+        if (kind===&#x27;state&#x27;) rows=currentStatusRows.map(row=&gt;({Группа:row.groupLabel,Состояние:row.label,Количество:row.value,Доля:currentMetrics.created?`${(row.value/currentMetrics.created*100).toFixed(1)}%`:&#x27;—&#x27;}));
+        if (kind===&#x27;km&#x27;) rows=currentKmRows.map(row=&gt;Object.fromEntries([&#x27;КМ&#x27;,...kmLabels].map((label,i)=&gt;[label,row[i]])));
         if (kind===&#x27;detail&#x27;) rows=currentDetailRows.map(row=&gt;Object.fromEntries(detailColumns.filter(([key])=&gt;visibleColumns.has(key)).map(([key,label])=&gt;[label,row[key]])));
         return rows;
       }
@@ -1464,87 +1540,47 @@ html&gt;body{padding:0}&lt;/style&gt;
           const url=URL.createObjectURL(xlsxBlob(exportRows(kind)));
           exportUrls.set(kind,url);
           link.href=url;
-          link.download=`ASP_лиды_${kind}_${els.to.value}.xlsx`;
+          link.download=`ASP_лиды_${kind}_${appliedFilters.from}_${appliedFilters.to}.xlsx`;
         });
       }
       function applyFilters() {
+        if (!els.from.value||!els.to.value) return;
         if (els.from.value &gt; els.to.value) els.to.value = els.from.value;
-        const f = factor();
+        appliedFilters=Object.fromEntries([&#x27;from&#x27;,&#x27;to&#x27;,&#x27;qualifier&#x27;,&#x27;km&#x27;,&#x27;source&#x27;,&#x27;base&#x27;].map(key=&gt;[key,els[key].value]));
+        currentMetrics=calculateMetrics(appliedFilters);
         root.querySelectorAll(&#x27;[data-metric]&#x27;).forEach(node =&gt; {
-          const key = node.dataset.metric;
-          if (key.endsWith(&#x27;Rate&#x27;) || key.endsWith(&#x27;Coverage&#x27;)) return;
-          node.textContent = metricValue(key,f);
+          node.textContent = currentMetrics[node.dataset.metric]??&#x27;—&#x27;;
         });
-        const provided = metricValue(&#x27;provided&#x27;,f);
-        const created = Math.min(provided,metricValue(&#x27;created&#x27;,f));
-        const processed = Math.min(created,metricValue(&#x27;processed&#x27;,f));
-        const attempted = Math.min(created,metricValue(&#x27;attempted&#x27;,f));
-        const connected = Math.min(attempted,metricValue(&#x27;connected&#x27;,f));
-        const transferred = Math.min(created,metricValue(&#x27;transferred&#x27;,f));
-        const accepted = Math.min(transferred,metricValue(&#x27;accepted&#x27;,f));
-        const lateAccepted = Math.min(accepted,metricValue(&#x27;lateAccepted&#x27;,f));
-        const acceptedOnTime = Math.max(0,accepted-lateAccepted);
-        const notAccepted = Math.max(0,transferred-accepted);
-        const inProgress = Math.min(accepted,metricValue(&#x27;inProgress&#x27;,f));
-        const orders = Math.min(transferred,metricValue(&#x27;orders&#x27;,f));
-        const deals = Math.min(orders,metricValue(&#x27;deals&#x27;,f));
-        const failures = Math.min(transferred,metricValue(&#x27;failures&#x27;,f));
-        const pct = (v,d) =&gt; d ? `${Math.round(v/d*100)}%` : &#x27;—&#x27;;
-        const setMetric = (key,value) =&gt; root.querySelectorAll(`[data-metric=&quot;${key}&quot;]`).forEach(node=&gt;node.textContent=value);
-        setMetric(&#x27;provided&#x27;,provided);
-        setMetric(&#x27;created&#x27;,created);
-        setMetric(&#x27;processed&#x27;,processed);
-        setMetric(&#x27;attempted&#x27;,attempted);
-        setMetric(&#x27;connected&#x27;,connected);
-        setMetric(&#x27;transferred&#x27;,transferred);
-        setMetric(&#x27;autoAppeals&#x27;,transferred);
-        setMetric(&#x27;accepted&#x27;,accepted);
-        setMetric(&#x27;notAccepted&#x27;,notAccepted);
-        setMetric(&#x27;acceptedOnTime&#x27;,acceptedOnTime);
-        setMetric(&#x27;lateAccepted&#x27;,lateAccepted);
-        setMetric(&#x27;inProgress&#x27;,inProgress);
-        setMetric(&#x27;orders&#x27;,orders);
-        setMetric(&#x27;deals&#x27;,deals);
-        setMetric(&#x27;failures&#x27;,failures);
-        setMetric(&#x27;processingCoverage&#x27;,pct(processed,created));
-        setMetric(&#x27;callCoverage&#x27;,pct(attempted,created));
-        setMetric(&#x27;reachRate&#x27;,pct(connected,created));
-        setMetric(&#x27;transferRate&#x27;,pct(transferred,created));
-        root.querySelector(&#x27;#aspv2-created-note&#x27;).textContent = `${pct(created,provided)} от переданных контактов`;
-        const totalCalls = metricValue(&#x27;calls&#x27;,f);
+        const {created,provided,calls:totalCalls,attempted}=currentMetrics;
+        root.querySelector(&#x27;#aspv2-created-note&#x27;).textContent = `${percentage(created,provided)} от полученных контактов`;
         const attemptsPerLead = attempted ? (totalCalls/attempted).toFixed(1).replace(&#x27;.&#x27;,&#x27;,&#x27;) : &#x27;—&#x27;;
         root.querySelector(&#x27;#aspv2-attempt-note&#x27;).textContent = `${totalCalls} попыток всего · ${attemptsPerLead} на охваченный лид`;
-        root.querySelector(&#x27;[data-metric=&quot;acceptanceRate&quot;]&#x27;).textContent = pct(accepted,transferred);
-        root.querySelector(&#x27;[data-metric=&quot;orderRate&quot;]&#x27;).textContent = pct(orders,transferred);
-        root.querySelector(&#x27;[data-metric=&quot;dealRate&quot;]&#x27;).textContent = pct(deals,transferred);
-        root.querySelector(&#x27;[data-metric=&quot;failRate&quot;]&#x27;).textContent = pct(failures,transferred);
         renderStates(created);
-        const dayCount = Math.min(7,days());
-        const activityRows = Array.from({length:dayCount},(_,i)=&gt;{
-          const d = new Date(els.to.value); d.setDate(d.getDate()-(dayCount-1-i));
-          return [new Intl.DateTimeFormat(&#x27;ru-RU&#x27;,{day:&#x27;2-digit&#x27;,month:&#x27;2-digit&#x27;}).format(d),Math.max(1,Math.round(metricValue(&#x27;processed&#x27;,f)/dayCount*(.78+i*.07)))];
-        });
+        const closedDates=snapshotDates.filter(date=&gt;date&gt;=appliedFilters.from&amp;&amp;date&lt;=appliedFilters.to);
+        root.querySelector(&#x27;#aspv2-state-asof&#x27;).textContent=closedDates.length?`Снимок: ${fmt(closedDates.at(-1))}, 21:00 МСК`:&#x27;Нет закрытого снимка в выбранном периоде&#x27;;
+        const activityRows = closedDates.map(date=&gt;[`${date.slice(8)}.${date.slice(5,7)}`,metricRows(&#x27;processed&#x27;,{...appliedFilters,from:date,to:date}).length,date]);
         bars(root.querySelector(&#x27;#aspv2-activity-bars&#x27;), activityRows);
         els.chips.innerHTML = [
           `${fmt(els.from.value)} — ${fmt(els.to.value)}`,
           els.qualifier.value, els.km.value, els.source.value, els.base.value
         ].map(v=&gt;`&lt;span class=&quot;aspv2-chip&quot;&gt;${v}&lt;/span&gt;`).join(&#x27;&#x27;);
         const selectedDays = days();
-        const snapshotCutoff = new Date(&#x27;2026-06-16T12:00:00&#x27;);
-        const fromDate = new Date(`${els.from.value}T12:00:00`);
-        const toDate = new Date(`${els.to.value}T12:00:00`);
-        const closedEnd = toDate &lt; snapshotCutoff ? toDate : snapshotCutoff;
-        const closedSnapshots = fromDate &gt; snapshotCutoff ? 0 : Math.max(0,Math.min(selectedDays,Math.round((closedEnd-fromDate)/86400000)+1));
+        const closedSnapshots = closedDates.length;
         root.querySelector(&#x27;#aspv2-period-days&#x27;).textContent = selectedDays;
         root.querySelector(&#x27;#aspv2-closed-snapshots&#x27;).textContent = `${closedSnapshots} из ${selectedDays}`;
         const snapshotNote = root.querySelector(&#x27;#aspv2-snapshot-note&#x27;);
         const complete = closedSnapshots === selectedDays;
         snapshotNote.innerHTML = complete
           ? &#x27;&lt;strong&gt;Данные периода закрыты полностью.&lt;/strong&gt;Последний закрытый снимок: 16 июня 2026, 21:00 МСК.&#x27;
-          : `&lt;strong&gt;Внимание: дата окончания периода позже последнего закрытого снимка.&lt;/strong&gt;Последний снимок: 16 июня 2026, 21:00 МСК · не закрыто дней: ${selectedDays-closedSnapshots}.`;
+          : `&lt;strong&gt;${appliedFilters.to&gt;demoDate?&#x27;Внимание: дата окончания периода позже последнего закрытого снимка.&#x27;:&#x27;Внимание: в периоде есть дни без закрытого снимка.&#x27;}&lt;/strong&gt;Последний снимок: 16 июня 2026, 21:00 МСК · без снимка дней: ${selectedDays-closedSnapshots}.`;
         snapshotNote.classList.toggle(&#x27;is-risk&#x27;,!complete);
         root.querySelector(&#x27;#aspv2-freeze-period&#x27;).textContent = els.from.value === els.to.value ? fmt(els.to.value) : `${fmt(els.from.value)} — ${fmt(els.to.value)}`;
-        renderTables(f);
+        const cohort=selectRecords(appliedFilters);
+        root.querySelector(&#x27;#aspv2-sla-first&#x27;).textContent=percentage(cohort.filter(row=&gt;row.attempted&amp;&amp;row.firstContactMinutes&lt;=120).length,currentMetrics.attempted);
+        root.querySelector(&#x27;#aspv2-sla-handoff&#x27;).textContent=percentage(cohort.filter(row=&gt;row.transferred&amp;&amp;row.handoffMinutes&lt;=30).length,currentMetrics.transferred);
+        root.querySelector(&#x27;#aspv2-source-complete&#x27;).textContent=`${cohort.filter(row=&gt;row.source).length} / ${created}`;
+        root.querySelector(&#x27;#aspv2-base-complete&#x27;).textContent=`${cohort.filter(row=&gt;row.base).length} / ${created}`;
+        renderTables();
       }
       root.querySelectorAll(&#x27;[data-preset]&#x27;).forEach(button =&gt; button.addEventListener(&#x27;click&#x27;,()=&gt;{
         const p = button.dataset.preset;
@@ -1564,12 +1600,15 @@ html&gt;body{padding:0}&lt;/style&gt;
       els.search.addEventListener(&#x27;input&#x27;,renderDetails);
       root.querySelector(&#x27;#aspv2-clear-sort&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{ sortKey=null; sortDirection=1; renderDetails(); });
       root.querySelector(&#x27;#aspv2-drill-reset&#x27;).addEventListener(&#x27;click&#x27;,resetDrill);
+      root.querySelector(&#x27;#aspv2-drill-back&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const previous=returnTab;resetDrill();switchTab(previous);});
+      root.querySelector(&#x27;#aspv2-demo-close&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;root.querySelector(&#x27;#aspv2-demo-card&#x27;).close());
       root.querySelectorAll(&#x27;.aspv2-kpi,.aspv2-conversion,.aspv2-step,.aspv2-rule[data-quality]&#x27;).forEach(node=&gt;{
         node.classList.add(&#x27;aspv2-drillable&#x27;);
         node.setAttribute(&#x27;role&#x27;,&#x27;button&#x27;);
         node.setAttribute(&#x27;tabindex&#x27;,&#x27;0&#x27;);
         const label=(node.querySelector(&#x27;.aspv2-kpi-label,small,span&#x27;)?.textContent || &#x27;Показатель&#x27;).trim();
-        const activate=()=&gt;node.dataset.quality ? openDetail(label,{quality:node.dataset.quality}) : openDetail(label);
+        const metric=node.querySelector(&#x27;[data-metric]&#x27;)?.dataset.metric;
+        const activate=()=&gt;node.dataset.quality ? openDetail(label,{quality:node.dataset.quality}) : openDetail(label,{metric});
         node.addEventListener(&#x27;click&#x27;,activate);
         node.addEventListener(&#x27;keydown&#x27;,event=&gt;{ if (event.key===&#x27;Enter&#x27; || event.key===&#x27; &#x27;) { event.preventDefault(); activate(); } });
       });
